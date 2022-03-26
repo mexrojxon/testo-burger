@@ -5463,11 +5463,11 @@ select:-webkit-autofill:focus {
 }
 
 #blog-page {
-  background-image: url(../images/blog-page.jpg);
+  background-image: url(../images/banner/1920x600.jpg);
 }
 
 #booking-page {
-  background-image: url(../images/booking-page.jpg);
+  background-image: url(../images/banner/1920x600.jpg);
 }
 
 #cart-page {

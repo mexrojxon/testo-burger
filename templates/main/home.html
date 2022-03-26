@@ -14,97 +14,32 @@
 
 
             <!-- SLIDER -->
+
             <div class="slider">
-                <ul class="slides">
-
-
-                    <!-- SLIDE #1 -->
-                    <li id="slide-1">
-
-                        <!-- Background Image -->
-                        <img src="{% static 'images/slider/slide-1.jpg' %} " alt="slide-background">
-
-                        <!-- Image Caption -->
-                        <div class="caption d-flex align-items-center center-align">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="caption-txt white-color">
-
-                                            <!-- Title -->
-                                            <div class="title"><h2>Good Time, Great Taste</h2></div>
-
-                                            <!-- Text -->
-                                            <p>Open Daily: <span class="yellow-color">11:30PM - 8:30PM</span></p>
-
+                {% for banner in banners %}
+                    <ul class="slides">
+                        <li id="slide-1">
+                            <!-- Background Image -->
+                            <img src="{{ banner.background.url }}" alt="slide-background">
+                            <div class="caption d-flex align-items-center center-align">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="caption-txt white-color">
+                                                <!-- Title -->
+                                                <div class="title"><h2>{{ banner.title }}</h2></div>
+                                                <!-- Text -->
+                                                <p>Open Daily: <span class="yellow-color">11:30PM - 8:30PM</span></p>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>  <!-- End row -->
-                            </div>  <!-- End container -->
-                        </div>    <!-- End Image Caption -->
-
-                    </li>    <!-- END SLIDE #1 -->
-
-
-                    <!-- SLIDE #2 -->
-                    <li id="slide-2">
-
-                        <!-- Background Image -->
-                        <img src="{% static 'images/slider/slide-2.jpg' %} " alt="slide-background">
-
-                        <!-- Image Caption -->
-                        <div class="caption d-flex align-items-center center-align">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="caption-txt white-color">
-
-                                            <!-- Title -->
-                                            <div class="title"><h2>Discover The Real Burgers</h2></div>
-
-                                            <!-- Text -->
-                                            <p>Enjoy the food you love <span class="yellow-color">FROM $6.99</span></p>
-
-                                        </div>
-                                    </div>
-                                </div>  <!-- End row -->
-                            </div>  <!-- End container -->
-                        </div>    <!-- End Image Caption -->
-
-                    </li>    <!-- END SLIDE #2 -->
-
-
-                    <!-- SLIDE #3 -->
-                    <li id="slide-3">
-
-                        <!-- Background Image -->
-                        <img src="{% static 'images/slider/slide-3.jpg' %} " alt="slide-background">
-
-                        <!-- Image Caption -->
-                        <div class="caption d-flex align-items-center center-align">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="caption-txt white-color">
-
-                                            <!-- Title -->
-                                            <div class="title"><h2>Big Burger, Little Money</h2></div>
-
-                                            <!-- Text -->
-                                            <p>Order Now: <span class="yellow-color"><a href="tel:123456789">789-654-3210</a></span>
-                                            </p>
-
-                                        </div>
-                                    </div>
-                                </div>  <!-- End row -->
-                            </div>  <!-- End container -->
-                        </div>    <!-- End Image Caption -->
-
-                    </li>    <!-- END SLIDE #3 -->
-
-                </ul>
-            </div>    <!-- END SLIDER -->
-
+                                    </div>  <!-- End row -->
+                                </div>  <!-- End container -->
+                            </div>    <!-- End Image Caption -->
+                        </li>    <!-- END SLIDE #1 -->
+                    </ul>
+                {% endfor %}
+            </div>
+            <!-- END SLIDER -->
 
         </section>    <!-- END HERO-1 -->
 
@@ -286,7 +221,8 @@
                                 <div class="hover-overlay">
 
                                     <!-- Image -->
-                                    <img class="img-fluid" src="{% static 'images/menu/burger-11.jpg' %} " alt="menu-image"/>
+                                    <img class="img-fluid" src="{% static 'images/menu/burger-11.jpg' %} "
+                                         alt="menu-image"/>
 
                                     <!-- Item Code -->
                                     <span class="item-code bg-tra-dark">Code: 0850</span>
@@ -352,7 +288,8 @@
                                 <div class="hover-overlay">
 
                                     <!-- Image -->
-                                    <img class="img-fluid" src="{% static 'images/menu/burger-12.jpg' %} " alt="menu-image"/>
+                                    <img class="img-fluid" src="{% static 'images/menu/burger-12.jpg' %} "
+                                         alt="menu-image"/>
 
                                     <!-- Item Code -->
                                     <span class="item-code bg-tra-dark">Code: 0858</span>
@@ -418,7 +355,8 @@
                                 <div class="hover-overlay">
 
                                     <!-- Image -->
-                                    <img class="img-fluid" src="{% static 'images/menu/burger-13.jpg' %} " alt="menu-image"/>
+                                    <img class="img-fluid" src="{% static 'images/menu/burger-13.jpg' %} "
+                                         alt="menu-image"/>
 
                                     <!-- Item Code -->
                                     <span class="item-code bg-tra-dark">Code: 0847</span>
@@ -484,7 +422,8 @@
                                 <div class="hover-overlay">
 
                                     <!-- Image -->
-                                    <img class="img-fluid" src="{% static 'images/menu/burger-14.jpg' %} " alt="menu-image"/>
+                                    <img class="img-fluid" src="{% static 'images/menu/burger-14.jpg' %} "
+                                         alt="menu-image"/>
 
                                     <!-- Item Code -->
                                     <span class="item-code bg-tra-dark">Code: 0859</span>
@@ -550,7 +489,8 @@
                                 <div class="hover-overlay">
 
                                     <!-- Image -->
-                                    <img class="img-fluid" src="{% static 'images/menu/burger-15.jpg' %} " alt="menu-image"/>
+                                    <img class="img-fluid" src="{% static 'images/menu/burger-15.jpg' %} "
+                                         alt="menu-image"/>
 
                                     <!-- Item Code -->
                                     <span class="item-code bg-tra-dark">Code: 0861</span>
@@ -616,7 +556,8 @@
                                 <div class="hover-overlay">
 
                                     <!-- Image -->
-                                    <img class="img-fluid" src="{% static 'images/menu/burger-16.jpg' %} " alt="menu-image"/>
+                                    <img class="img-fluid" src="{% static 'images/menu/burger-16.jpg' %} "
+                                         alt="menu-image"/>
 
                                     <!-- Item Code -->
                                     <span class="item-code bg-tra-dark">Code: 0840</span>
@@ -682,7 +623,8 @@
                                 <div class="hover-overlay">
 
                                     <!-- Image -->
-                                    <img class="img-fluid" src="{% static 'images/menu/burger-17.jpg' %} " alt="menu-image"/>
+                                    <img class="img-fluid" src="{% static 'images/menu/burger-17.jpg' %} "
+                                         alt="menu-image"/>
 
                                     <!-- Item Code -->
                                     <span class="item-code bg-tra-dark">Code: 0862</span>
@@ -748,7 +690,8 @@
                                 <div class="hover-overlay">
 
                                     <!-- Image -->
-                                    <img class="img-fluid" src="{% static 'images/menu/burger-18.jpg' %} " alt="menu-image"/>
+                                    <img class="img-fluid" src="{% static 'images/menu/burger-18.jpg' %} "
+                                         alt="menu-image"/>
 
                                     <!-- Item Code -->
                                     <span class="item-code bg-tra-dark">Code: 0844</span>
@@ -862,7 +805,8 @@
                         <!-- Link -->
                         <div class="pbox-11-link text-center white-color">
                             <a href="product-single.html">
-                                <img class="img-fluid" src="{% static 'images/menu/burger-02.png' %} " alt="promo-image"/>
+                                <img class="img-fluid" src="{% static 'images/menu/burger-02.png' %} "
+                                     alt="promo-image"/>
                                 <p>Ultimate Bacon Burger</p>
                             </a>
                         </div>
@@ -870,7 +814,8 @@
                         <!-- Link -->
                         <div class="pbox-11-link text-center mb-40 white-color">
                             <a href="product-single.html">
-                                <img class="img-fluid" src="{% static 'images/menu/burger-05.png' %} " alt="promo-image"/>
+                                <img class="img-fluid" src="{% static 'images/menu/burger-05.png' %} "
+                                     alt="promo-image"/>
                                 <p>Grilled Chicken Burger</p>
                             </a>
                         </div>
@@ -942,7 +887,8 @@
                                     <div class="menu-7-img rel">
 
                                         <!-- Image -->
-                                        <img class="img-fluid" src="{% static 'images/menu/burger-01.png' %} " alt="menu-image"/>
+                                        <img class="img-fluid" src="{% static 'images/menu/burger-01.png' %} "
+                                             alt="menu-image"/>
 
                                         <!-- Price -->
                                         <div class="menu-7-price bg-coffee">
@@ -996,7 +942,8 @@
                                     <div class="menu-7-img rel">
 
                                         <!-- Image -->
-                                        <img class="img-fluid" src="{% static 'images/menu/burger-02.png' %} " alt="menu-image"/>
+                                        <img class="img-fluid" src="{% static 'images/menu/burger-02.png' %} "
+                                             alt="menu-image"/>
 
                                         <!-- Price -->
                                         <div class="menu-7-price bg-coffee">
@@ -1050,7 +997,8 @@
                                     <div class="menu-7-img rel">
 
                                         <!-- Image -->
-                                        <img class="img-fluid" src="{% static 'images/menu/burger-06.png' %} " alt="menu-image"/>
+                                        <img class="img-fluid" src="{% static 'images/menu/burger-06.png' %} "
+                                             alt="menu-image"/>
 
                                         <!-- Price -->
                                         <div class="menu-7-price bg-coffee">
@@ -1104,7 +1052,8 @@
                                     <div class="menu-7-img rel">
 
                                         <!-- Image -->
-                                        <img class="img-fluid" src="{% static 'images/menu/burger-05.png' %} " alt="menu-image"/>
+                                        <img class="img-fluid" src="{% static 'images/menu/burger-05.png' %} "
+                                             alt="menu-image"/>
 
                                         <!-- Price -->
                                         <div class="menu-7-price bg-coffee">
@@ -1167,7 +1116,8 @@
                                     <div class="menu-7-img rel">
 
                                         <!-- Image -->
-                                        <img class="img-fluid" src="{% static 'images/menu/side-01.png' %} " alt="menu-image"/>
+                                        <img class="img-fluid" src="{% static 'images/menu/side-01.png' %} "
+                                             alt="menu-image"/>
 
                                         <!-- Price -->
                                         <div class="menu-7-price bg-coffee">
@@ -1221,7 +1171,8 @@
                                     <div class="menu-7-img rel">
 
                                         <!-- Image -->
-                                        <img class="img-fluid" src="{% static 'images/menu/side-02.png' %} " alt="menu-image"/>
+                                        <img class="img-fluid" src="{% static 'images/menu/side-02.png' %} "
+                                             alt="menu-image"/>
 
                                         <!-- Price -->
                                         <div class="menu-7-price bg-coffee">
@@ -1275,7 +1226,8 @@
                                     <div class="menu-7-img rel">
 
                                         <!-- Image -->
-                                        <img class="img-fluid" src="{% static 'images/menu/side-03.png' %} " alt="menu-image"/>
+                                        <img class="img-fluid" src="{% static 'images/menu/side-03.png' %} "
+                                             alt="menu-image"/>
 
                                         <!-- Price -->
                                         <div class="menu-7-price bg-coffee">
@@ -1329,7 +1281,8 @@
                                     <div class="menu-7-img rel">
 
                                         <!-- Image -->
-                                        <img class="img-fluid" src="{% static 'images/menu/side-04.png' %} " alt="menu-image"/>
+                                        <img class="img-fluid" src="{% static 'images/menu/side-04.png' %} "
+                                             alt="menu-image"/>
 
                                         <!-- Price -->
                                         <div class="menu-7-price bg-coffee">
@@ -1392,7 +1345,8 @@
                                     <div class="menu-7-img rel">
 
                                         <!-- Image -->
-                                        <img class="img-fluid" src="{% static 'images/menu/salad-01.png' %} " alt="menu-image"/>
+                                        <img class="img-fluid" src="{% static 'images/menu/salad-01.png' %} "
+                                             alt="menu-image"/>
 
                                         <!-- Price -->
                                         <div class="menu-7-price bg-coffee">
@@ -1446,7 +1400,8 @@
                                     <div class="menu-7-img rel">
 
                                         <!-- Image -->
-                                        <img class="img-fluid" src="{% static 'images/menu/salad-02.png' %} " alt="menu-image"/>
+                                        <img class="img-fluid" src="{% static 'images/menu/salad-02.png' %} "
+                                             alt="menu-image"/>
 
                                         <!-- Price -->
                                         <div class="menu-7-price bg-coffee">
@@ -1500,7 +1455,8 @@
                                     <div class="menu-7-img rel">
 
                                         <!-- Image -->
-                                        <img class="img-fluid" src="{% static 'images/menu/salad-03.png' %} " alt="menu-image"/>
+                                        <img class="img-fluid" src="{% static 'images/menu/salad-03.png' %} "
+                                             alt="menu-image"/>
 
                                         <!-- Price -->
                                         <div class="menu-7-price bg-coffee">
@@ -1554,7 +1510,8 @@
                                     <div class="menu-7-img rel">
 
                                         <!-- Image -->
-                                        <img class="img-fluid" src="{% static 'images/menu/salad-04.png' %} " alt="menu-image"/>
+                                        <img class="img-fluid" src="{% static 'images/menu/salad-04.png' %} "
+                                             alt="menu-image"/>
 
                                         <!-- Price -->
                                         <div class="menu-7-price bg-coffee">
@@ -1617,7 +1574,8 @@
                                     <div class="menu-7-img rel">
 
                                         <!-- Image -->
-                                        <img class="img-fluid" src="{% static 'images/menu/dessert-01.png' %} " alt="menu-image"/>
+                                        <img class="img-fluid" src="{% static 'images/menu/dessert-01.png' %} "
+                                             alt="menu-image"/>
 
                                         <!-- Price -->
                                         <div class="menu-7-price bg-coffee">
@@ -1670,7 +1628,8 @@
                                     <div class="menu-7-img rel">
 
                                         <!-- Image -->
-                                        <img class="img-fluid" src="{% static 'images/menu/dessert-02.png' %} " alt="menu-image"/>
+                                        <img class="img-fluid" src="{% static 'images/menu/dessert-02.png' %} "
+                                             alt="menu-image"/>
 
                                         <!-- Price -->
                                         <div class="menu-7-price bg-coffee">
@@ -1724,7 +1683,8 @@
                                     <div class="menu-7-img rel">
 
                                         <!-- Image -->
-                                        <img class="img-fluid" src="{% static 'images/menu/dessert-03.png' %} " alt="menu-image"/>
+                                        <img class="img-fluid" src="{% static 'images/menu/dessert-03.png' %} "
+                                             alt="menu-image"/>
 
                                         <!-- Price -->
                                         <div class="menu-7-price bg-coffee">
@@ -1778,7 +1738,8 @@
                                     <div class="menu-7-img rel">
 
                                         <!-- Image -->
-                                        <img class="img-fluid" src="{% static 'images/menu/dessert-04.png' %} " alt="menu-image"/>
+                                        <img class="img-fluid" src="{% static 'images/menu/dessert-04.png' %} "
+                                             alt="menu-image"/>
 
                                         <!-- Price -->
                                         <div class="menu-7-price bg-coffee">
@@ -2042,7 +2003,8 @@
                                     <div class="hover-overlay">
 
                                         <!-- Image -->
-                                        <img class="img-fluid" src="{% static 'images/img-24.jpg' %} " alt="promo-image"/>
+                                        <img class="img-fluid" src="{% static 'images/img-24.jpg' %} "
+                                             alt="promo-image"/>
 
                                         <!-- Item Code -->
                                         <span class="item-code bg-yellow">Code: 0961</span>
@@ -2083,7 +2045,8 @@
                                     <div class="hover-overlay">
 
                                         <!-- Image -->
-                                        <img class="img-fluid" src="{% static 'images/img-21.jpg' %} " alt="promo-image"/>
+                                        <img class="img-fluid" src="{% static 'images/img-21.jpg' %} "
+                                             alt="promo-image"/>
 
                                         <!-- Item Code -->
                                         <span class="item-code bg-yellow">Code: 2136</span>
@@ -2124,7 +2087,8 @@
                                     <div class="hover-overlay">
 
                                         <!-- Image -->
-                                        <img class="img-fluid" src="{% static 'images/img-25.jpg' %} " alt="promo-image"/>
+                                        <img class="img-fluid" src="{% static 'images/img-25.jpg' %} "
+                                             alt="promo-image"/>
 
                                         <!-- Item Code -->
                                         <span class="item-code bg-yellow">Code: 2164</span>
@@ -2479,12 +2443,14 @@
 
                                 <!-- AppStore -->
                                 <a href="#" class="store">
-                                    <img class="appstore-original" src="{% static 'images/appstore.png' %} " alt="appstore-logo"/>
+                                    <img class="appstore-original" src="{% static 'images/appstore.png' %} "
+                                         alt="appstore-logo"/>
                                 </a>
 
                                 <!-- Google Play -->
                                 <a href="#" class="store">
-                                    <img class="googleplay-original" src="{% static 'images/googleplay.png' %} " alt="googleplay-logo"/>
+                                    <img class="googleplay-original" src="{% static 'images/googleplay.png' %} "
+                                         alt="googleplay-logo"/>
                                 </a>
 
                             </div>
@@ -2539,7 +2505,8 @@
                         <div class="gallery-img">
                             <a href="{% static 'images/gallery/img-01.jpg' %} " class="image-link">
                                 <div class="hover-overlay">
-                                    <img class="img-fluid" src="{% static 'images/gallery/img-01.jpg' %} " alt="gallery-image"/>
+                                    <img class="img-fluid" src="{% static 'images/gallery/img-01.jpg' %} "
+                                         alt="gallery-image"/>
                                     <div class="item-overlay"></div>
 
                                     <!-- Image Meta -->
@@ -2569,7 +2536,8 @@
                         <div class="gallery-img">
                             <a href="{% static 'images/gallery/img-02.jpg' %} " class="image-link">
                                 <div class="hover-overlay">
-                                    <img class="img-fluid" src="{% static 'images/gallery/img-02.jpg' %} " alt="gallery-image"/>
+                                    <img class="img-fluid" src="{% static 'images/gallery/img-02.jpg' %} "
+                                         alt="gallery-image"/>
                                     <div class="item-overlay"></div>
 
                                     <!-- Image Meta -->
@@ -2599,7 +2567,8 @@
                         <div class="gallery-img">
                             <a href="{% static 'images/gallery/img-03.jpg' %} " class="image-link">
                                 <div class="hover-overlay">
-                                    <img class="img-fluid" src="{% static 'images/gallery/img-03.jpg' %} " alt="gallery-image"/>
+                                    <img class="img-fluid" src="{% static 'images/gallery/img-03.jpg' %} "
+                                         alt="gallery-image"/>
                                     <div class="item-overlay"></div>
 
                                     <!-- Image Meta -->
@@ -2629,7 +2598,8 @@
                         <div class="gallery-img">
                             <a href="{% static 'images/gallery/img-04.jpg' %} " class="image-link">
                                 <div class="hover-overlay">
-                                    <img class="img-fluid" src="{% static 'images/gallery/img-04.jpg' %} " alt="gallery-image"/>
+                                    <img class="img-fluid" src="{% static 'images/gallery/img-04.jpg' %} "
+                                         alt="gallery-image"/>
                                     <div class="item-overlay"></div>
 
                                     <!-- Image Meta -->
@@ -2659,7 +2629,8 @@
                         <div class="gallery-img">
                             <a href="{% static 'images/gallery/img-05.jpg' %} " class="image-link">
                                 <div class="hover-overlay">
-                                    <img class="img-fluid" src="{% static 'images/gallery/img-05.jpg' %} " alt="gallery-image"/>
+                                    <img class="img-fluid" src="{% static 'images/gallery/img-05.jpg' %} "
+                                         alt="gallery-image"/>
                                     <div class="item-overlay"></div>
 
                                     <!-- Image Meta -->
@@ -2689,7 +2660,8 @@
                         <div class="gallery-img">
                             <a href="{% static 'images/gallery/img-06.jpg' %} " class="image-link">
                                 <div class="hover-overlay">
-                                    <img class="img-fluid" src="{% static 'images/gallery/img-06.jpg' %} " alt="gallery-image"/>
+                                    <img class="img-fluid" src="{% static 'images/gallery/img-06.jpg' %} "
+                                         alt="gallery-image"/>
                                     <div class="item-overlay"></div>
 
                                     <!-- Image Meta -->
@@ -2719,7 +2691,8 @@
                         <div class="gallery-img">
                             <a href="{% static 'images/gallery/img-07.jpg' %} " class="image-link">
                                 <div class="hover-overlay">
-                                    <img class="img-fluid" src="{% static 'images/gallery/img-07.jpg' %} " alt="gallery-image"/>
+                                    <img class="img-fluid" src="{% static 'images/gallery/img-07.jpg' %} "
+                                         alt="gallery-image"/>
                                     <div class="item-overlay"></div>
 
                                     <!-- Image Meta -->
@@ -2749,7 +2722,8 @@
                         <div class="gallery-img">
                             <a href="{% static 'images/gallery/img-08.jpg' %} " class="image-link">
                                 <div class="hover-overlay">
-                                    <img class="img-fluid" src="{% static 'images/gallery/img-08.jpg' %} " alt="gallery-image"/>
+                                    <img class="img-fluid" src="{% static 'images/gallery/img-08.jpg' %} "
+                                         alt="gallery-image"/>
                                     <div class="item-overlay"></div>
 
                                     <!-- Image Meta -->
@@ -2873,7 +2847,8 @@
                             <!-- BLOG POST IMAGE -->
                             <div class="blog-post-img">
                                 <div class="hover-overlay">
-                                    <img class="img-fluid" src="{% static 'images/blog/img-01.jpg' %} " alt="blog-post-image"/>
+                                    <img class="img-fluid" src="{% static 'images/blog/img-01.jpg' %} "
+                                         alt="blog-post-image"/>
                                 </div>
                             </div>
 
@@ -2900,7 +2875,8 @@
                             <!-- BLOG POST IMAGE -->
                             <div class="blog-post-img">
                                 <div class="hover-overlay">
-                                    <img class="img-fluid" src="{% static 'images/blog/img-02.jpg' %} " alt="blog-post-image"/>
+                                    <img class="img-fluid" src="{% static 'images/blog/img-02.jpg' %} "
+                                         alt="blog-post-image"/>
                                 </div>
                             </div>
 
@@ -2927,7 +2903,8 @@
                             <!-- BLOG POST IMAGE -->
                             <div class="blog-post-img">
                                 <div class="hover-overlay">
-                                    <img class="img-fluid" src="{% static 'images/blog/img-03.jpg' %} " alt="blog-post-image"/>
+                                    <img class="img-fluid" src="{% static 'images/blog/img-03.jpg' %} "
+                                         alt="blog-post-image"/>
                                 </div>
                             </div>
 
