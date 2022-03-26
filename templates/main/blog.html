@@ -17,7 +17,8 @@
                                     <div class="breadcrumb-nav">
                                         <nav aria-label="breadcrumb">
                                             <ol class="breadcrumb">
-                                                <li class="breadcrumb-item"><a href="{% url 'pages:home' %}">Home</a></li>
+                                                <li class="breadcrumb-item"><a href="{% url 'pages:home' %}">Home</a>
+                                                </li>
                                                 <li class="breadcrumb-item active" aria-current="page">Our Blog</li>
                                             </ol>
                                         </nav>
@@ -27,7 +28,13 @@
                         </div>
 
                         <!-- Title -->
-                        <h2 class="h2-xl">Blog Listing</h2>
+                        <h2 class="h2-xl">
+                            {% if request.GET.tag %}
+                                #{{ request.GET.tag }}
+                            {% else %}
+                                Blog Listing
+                            {% endif %}
+                        </h2>
 
                     </div>
                 </div>
@@ -89,106 +96,39 @@
 
 
                         <!-- BLOG POST #2 -->
-                        <div class="col-md-6 col-lg-4">
-                            <div id="sp-2-1" class="blog-post">
+                        {% for blog in posts %}
+                            <div class="col-md-6 col-lg-4">
+                                <div id="sp-2-1" class="blog-post">
 
-                                <!-- BLOG POST IMAGE -->
-                                <div class="blog-post-img">
-                                    <div class="hover-overlay">
-                                        <img class="img-fluid" src="images/blog/img-01.jpg" alt="blog-post-image"/>
-                                    </div>
-                                </div>
-
-                                <!-- BLOG POST TITLE -->
-                                <div class="blog-post-txt">
-
-                                    <!-- Post Title -->
-                                    <h5 class="h5-lg"><a href="single-post.html">Quaerat neque purus ipsum neque
-                                        dolor</a>
-                                    </h5>
-
-                                    <!-- Post Text -->
-                                    <p class="grey-color">Quaerat neque purus ipsum neque dolor primis tempus
-                                        impedit</p>
-
-                                    <!-- Post Meta -->
-                                    <div class="blog-post-meta grey-color">
-                                        <span><i class="fas fa-comment"></i> 3</span>
-                                        <span><i class="fas fa-heart"></i> 11</span>
+                                    <!-- BLOG POST IMAGE -->
+                                    <div class="blog-post-img">
+                                        <div class="hover-overlay">
+                                            <img class="img-fluid" src="{{ blog.main_image.url }}" alt="blog-post-image"/>
+                                        </div>
                                     </div>
 
-                                </div>
+                                    <!-- BLOG POST TITLE -->
+                                    <div class="blog-post-txt">
 
+                                        <!-- Post Title -->
+                                        <h5 class="h5-lg"><a href="{% url 'blog:blog_detail' blog.id %}">{{ blog.title }}</a>
+                                        </h5>
+
+                                        <!-- Post Text -->
+                                        <p class="grey-color">{{ blog.description|truncatewords:'7' }}</p>
+
+                                        <!-- Post Meta -->
+                                        <div class="blog-post-meta grey-color">
+                                            <span><i class="fas fa-comment"></i> 3</span>
+                                            <span><i class="fas fa-heart"></i> 11</span>
+                                        </div>
+
+                                    </div>
+
+                                </div>
                             </div>
-                        </div>    <!-- END  BLOG POST #1 -->
-
-
-                        <!-- BLOG POST #3 -->
-                        <div class="col-md-6 col-lg-4">
-                            <div id="sp-2-2" class="blog-post">
-
-                                <!-- BLOG POST IMAGE -->
-                                <div class="blog-post-img">
-                                    <div class="hover-overlay">
-                                        <img class="img-fluid" src="images/blog/img-02.jpg" alt="blog-post-image"/>
-                                    </div>
-                                </div>
-
-                                <!-- BLOG POST TEXT -->
-                                <div class="blog-post-txt">
-
-                                    <!-- Post Title -->
-                                    <h5 class="h5-lg"><a href="single-post.html">Tempor blandit sapien at gravida donec
-                                        ipsum</a></h5>
-
-                                    <!-- Post Text -->
-                                    <p class="grey-color">Neque dolor primis libero tempus impedit tempor sapien
-                                        gravida</p>
-
-                                    <!-- Post Meta -->
-                                    <div class="blog-post-meta grey-color">
-                                        <span><i class="fas fa-comment"></i> 7</span>
-                                        <span><i class="fas fa-heart"></i> 15</span>
-                                    </div>
-
-                                </div>
-
-                            </div>
-                        </div>    <!-- END  BLOG POST #2 -->
-
-
-                        <!-- BLOG POST #4 -->
-                        <div class="col-md-6 col-lg-4">
-                            <div id="sp-2-3" class="blog-post">
-
-                                <!-- BLOG POST IMAGE -->
-                                <div class="blog-post-img">
-                                    <div class="hover-overlay">
-                                        <img class="img-fluid" src="images/blog/img-03.jpg" alt="blog-post-image"/>
-                                    </div>
-                                </div>
-
-                                <!-- BLOG POST TEXT -->
-                                <div class="blog-post-txt">
-
-                                    <!-- Post Title -->
-                                    <h5 class="h5-lg"><a href="single-post.html">Neque dolor primis a libero tempus a
-                                        tempor</a></h5>
-
-                                    <!-- Post Text -->
-                                    <p class="grey-color">Impedit tempor at donec sapien ipsum a neque dolor primis
-                                        libero</p>
-
-                                    <!-- Post Meta -->
-                                    <div class="blog-post-meta grey-color">
-                                        <span><i class="fas fa-comment"></i> 8</span>
-                                        <span><i class="fas fa-heart"></i> 13</span>
-                                    </div>
-
-                                </div>
-
-                            </div>
-                        </div>    <!-- END  BLOG POST #3 -->
+                        {% endfor %}
+                        <!-- END  BLOG POST #1 -->
 
 
                     </div>    <!-- END BLOG POSTS HOLDER -->

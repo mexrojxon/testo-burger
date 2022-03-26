@@ -1,0 +1,393 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <div id="blog-page" class="page-hero-section division">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+                    <div class="hero-txt text-center white-color">
+
+                        <!-- Breadcrumb -->
+                        <div id="breadcrumb">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="breadcrumb-nav">
+                                        <nav aria-label="breadcrumb">
+                                            <ol class="breadcrumb">
+                                                <li class="breadcrumb-item"><a href="demo-1.html">Home</a></li>
+                                                <li class="breadcrumb-item"><a href="blog-listing.html">Blog</a></li>
+                                                <li class="breadcrumb-item active" aria-current="page">Blog Post</li>
+                                            </ol>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Title -->
+                        <h2 class="h2-xl">Single Blog Post</h2>
+
+                    </div>
+                </div>
+            </div>      <!-- End row -->
+        </div>       <!-- End container -->
+    </div>    <!-- END PAGE HERO -->
+    <!-- SINGLE POST
+============================================= -->
+    <section id="single-post" class="wide-100 single-post-section division">
+        <div class="container">
+
+
+            <!-- SINGLE POST CONTENT -->
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+                    <div class="single-post-wrapper">
+
+
+                        <!-- SINGLE POST TITLE -->
+                        <div class="single-post-title">
+
+                            <!-- TITLE -->
+                            <h2 class="h2-xs">{{ post.title }}</h2>
+
+
+                        </div>    <!-- END SINGLE POST TITLE -->
+
+
+                        <!-- BLOG POST TEXT -->
+                        <div class="single-post-txt">
+
+                            <!-- Text -->
+                            <p>{{ post.description }}</p>
+
+                        </div>
+
+
+                        <!-- BLOG POST INNER IMAGE -->
+                        <div class="post-inner-img">
+                            <img class="img-fluid" src="post.main_image" alt="blog-post-image"/>
+                        </div>
+
+
+                        <!-- BLOG POST TEXT -->
+                        <div class="single-post-txt">
+
+                            <!-- Text -->
+                            <p>{{ post.description }}
+                            </p>
+
+                        </div>    <!-- END BLOG POST TEXT -->
+
+
+                        <!-- SINGLE POST SHARE LINKS -->
+                        <div class="row post-share-links d-flex align-items-center">
+
+                            <!-- POST TAGS -->
+                            <div class="col-md-9 col-xl-8 post-tags-list">
+                                {% for tag in post.tags.all %}
+                                    <span><a href="{% url 'blog:blog_list' %}?tag={{ tag }}">{{ tag }}</a></span>
+                                {% endfor %}
+                            </div>
+
+                            <!-- POST SHARE ICONS -->
+                            <div class="col-md-3 col-xl-4 post-share-list text-right">
+                                <ul class="share-social-icons text-center clearfix">
+                                    <li><a href="#" class="share-ico ico-facebook"><i
+                                            class="fab fa-facebook-square"></i></a></li>
+                                    <li><a href="#" class="share-ico ico-twitter"><i class="fab fa-twitter"></i></a>
+                                    </li>
+                                    <li><a href="#" class="share-ico ico-like"><i class="far fa-bookmark"></i></a></li>
+                                </ul>
+                            </div>
+
+                        </div>    <!-- END SINGLE POST SHARE -->
+
+                    </div>
+                </div>
+            </div>    <!-- END SINGLE POST CONTENT -->
+
+
+        </div>     <!-- End container -->
+    </section>    <!-- END SINGLE POST -->
+
+
+
+
+    <!-- OTHER POSTS
+    ============================================= -->
+    <section id="other-posts" class="bg-lightgrey other-posts division">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+                    <div id="op-row" class="row d-flex align-items-center">
+
+                        <!-- Previous Post -->
+                        <div class="col-md-5">
+                            <div class="prev-post mb-30">
+                                <h6 class="h6-xl">Previous Post</h6>
+                                <a href="single-post.html">Congue bulum Testo tincidunt at purus pretium magnis</a>
+                            </div>
+                        </div>
+
+                        <!-- All Posts -->
+                        <div class="col-md-2 text-center">
+                            <div class="all-posts mb-30">
+                                <a href="blog-listing.html"><i class="fas fa-th-large"></i></a>
+                            </div>
+                        </div>
+
+                        <!-- Next Post -->
+                        <div class="col-md-5 text-right">
+                            <div class="next-post mb-30">
+                                <h6 class="h6-xl">Next Post</h6>
+                                <a href="single-post.html">12 neque dolor primis a libero tempus augue tempor</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>      <!-- End row -->
+        </div>
+    </section>    <!-- END OTHER POSTS -->
+
+
+
+
+    <!-- POST COMMENTS
+    ============================================= -->
+    <section id="post-comments" class="wide-80 post-comments division">
+        <div class="container">
+            <div class="row">
+
+
+                <!-- COMMENTS WRAPPER -->
+                <div class="col-lg-10 offset-lg-1">
+                    <div class="comments-wrapper">
+
+                        <!-- Title -->
+                        <h5 class="h5-lg">4 Comments</h5>
+
+
+                        <!-- COMMENT #1 -->
+                        <div class="media">
+
+                            <!-- Comment-1 Avatar -->
+                            <img class="mr-3" src="images/post-author-1.jpg" alt="comment-avatar">
+
+                            <div class="media-body">
+
+                                <!-- Comment-1 Meta -->
+                                <div class="comment-meta">
+                                    <h6 class="h6-md mt-0">Thomas</h6>
+                                    <span class="comment-date">5 days ago&#8194;- </span>
+                                    <span class="btn-reply"><a href="#leave-comment" class="internal-link"><i
+                                            class="fas fa-reply"></i> Reply</a></span>
+                                </div>
+
+                                <!-- Comment-1 Text -->
+                                <p class="mb-40">Etiam sapien sem magna at vitae pulvinar congue augue egestas pretium
+                                    neque viverra
+                                    suscipit egestas magna porta ratione, mollis risus lectus porta rutrum arcu aenean
+                                    primis in augue
+                                    luctus neque purus ipsum neque dolor primis purus efficitur ipsum primis in cubilia
+                                    laoreet augue
+                                </p>
+
+                                <hr/>
+
+                                <!-- COMMENT #2 -->
+                                <div class="media">
+
+                                    <!-- Comment-2 Avatar -->
+                                    <a href="#" class="pr-3">
+                                        <img src="images/post-author-2.jpg" alt="comment-avatar">
+                                    </a>
+
+                                    <div class="media-body">
+
+                                        <!-- Comment-2 Meta -->
+                                        <div class="comment-meta">
+                                            <h6 class="h6-md mt-0">David Clark</h6>
+                                            <span class="comment-date">6 days ago&#8194;- </span>
+                                            <span class="btn-reply"><a href="#leave-comment" class="internal-link"><i
+                                                    class="fas fa-reply"></i> Reply</a></span>
+                                        </div>
+
+                                        <!-- Comment-2 Text -->
+                                        <p>Etiam sapien sem magna at vitae pulvinar congue augue egestas pretium neque
+                                            and viverra
+                                            suscipit porta ratione, mollis risus lectus porta aliquet lorem purus mollis
+                                        </p>
+
+                                    </div>
+                                </div>    <!-- END COMMENT #2 -->
+
+                            </div>
+                        </div>    <!-- END COMMENT #1 -->
+
+
+                        <hr/>
+
+
+                        <!-- COMMENT #3 -->
+                        <div class="media">
+
+                            <!-- Comment-4 Avatar -->
+                            <img class="mr-3" src="images/post-author-3.jpg" alt="comment-avatar">
+
+                            <div class="media-body">
+
+                                <!-- Comment-4 Meta -->
+                                <div class="comment-meta">
+                                    <h6 class="h6-md mt-0">Jasmine</h6>
+                                    <span class="comment-date">13 days ago&#8194;- </span>
+                                    <span class="btn-reply"><a href="#leave-comment" class="internal-link"><i
+                                            class="fas fa-reply"></i> Reply</a></span>
+                                </div>
+
+                                <!-- Comment-4 Text -->
+                                <p>Porta ratione, mollis risus lectus porta rutrum arcu aenean primis in augue luctus
+                                    neque purus
+                                    ipsum neque dolor primis libero tempus, tempor posuere ligula varius impedit enim
+                                    tempor vitae
+                                    pulvinar at congue augue egestas. Praesent aliquet lorem purus, quis mollis nisi
+                                    laoreet
+                                </p>
+
+                            </div>
+                        </div>    <!-- END COMMENT #3 -->
+
+
+                        <hr/>
+
+
+                        <!-- COMMENT #4 -->
+                        <div class="media">
+
+                            <!-- Comment-4 Avatar -->
+                            <img class="mr-3" src="images/post-author-4.jpg" alt="comment-avatar">
+
+                            <div class="media-body">
+
+                                <!-- Comment-4 Meta -->
+                                <div class="comment-meta">
+                                    <h6 class="h6-md mt-0">Rady Smith</h6>
+                                    <span class="comment-date">42 days ago&#8194;- </span>
+                                    <span class="btn-reply"><a href="#leave-comment" class="internal-link"><i
+                                            class="fas fa-reply"></i> Reply</a></span>
+                                </div>
+
+                                <!-- Comment-4 Text -->
+                                <p>Etiam sapien sem magna at vitae pulvinar congue augue egestas pretium neque viverra
+                                    suscipit
+                                    egestas magna porta ratione, mollis risus lectus porta rutrum arcu an aenean primis
+                                    auctor
+                                </p>
+
+                            </div>
+                        </div>    <!-- END COMMENT #4 -->
+
+
+                        <hr/>
+
+
+                        <!-- COMMENT FORM -->
+                        <div id="leave-comment">
+
+                            <!-- Title -->
+                            <h5 class="h5-lg">Leave a Comment</h5>
+
+                            <!-- Text -->
+                            <p class="p-sm grey-color">Your email address will not be published. Required fields are
+                                marked *</p>
+
+                            <form name="commentForm" class="row comment-form">
+
+                                <div class="col-md-12 input-message">
+                                    <p>Add Comment *</p>
+                                    <textarea class="form-control message" name="message" rows="6"
+                                              placeholder="Enter Your Comment Here* ..." required></textarea>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <p>Name*</p>
+                                    <input type="text" name="name" class="form-control name"
+                                           placeholder="Enter Your Name*" required>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <p>Email*</p>
+                                    <input type="email" name="email" class="form-control email"
+                                           placeholder="Enter Your Email*" required>
+                                </div>
+
+                                <!-- Contact Form Button -->
+                                <div class="col-lg-12 form-btn">
+                                    <button type="submit" class="btn btn-red tra-red-hover submit">Post Comment</button>
+                                </div>
+
+                                <!-- Contact Form Message -->
+                                <div class="col-md-12 comment-form-msg text-center">
+                                    <div class="sending-msg"><span class="loading"></span></div>
+                                </div>
+
+                            </form>
+
+                        </div>    <!-- END COMMENT FORM -->
+
+                    </div>
+                </div>    <!-- END COMMENTS WRAPPER -->
+
+
+            </div>     <!-- End row -->
+        </div>     <!-- End container -->
+    </section>    <!-- END POST COMMENTS -->
+
+
+
+
+    <!-- NEWSLETTER-1
+    ============================================= -->
+    <section id="newsletter-1" class="mb-20 newsletter-section division">
+        <div class="container">
+            <div class="inner-bg bg-lightgrey">
+                <div class="row">
+
+
+                    <!-- NEWSLETTER FORM -->
+                    <div class="col-md-10 col-xl-8 offset-md-1 offset-xl-2">
+                        <div class="newsletter-txt text-center">
+
+                            <!-- Title -->
+                            <h3 class="h3-sm">Subscribe To Newsletter</h3>
+
+                            <!-- Text -->
+                            <p class="p-md grey-color">Subscribe to the weekly newsletter for all the latest updates</p>
+
+                            <!-- Form -->
+                            <form class="newsletter-form">
+
+                                <div class="input-group">
+                                    <input type="email" class="form-control" placeholder="Your email address" required
+                                           id="s-email">
+                                    <span class="input-group-btn">
+												<button type="submit" class="btn btn-red tra-red-hover">Sign Up</button>
+											</span>
+                                </div>
+
+                                <!-- Newsletter Form Notification -->
+                                <label for="s-email" class="form-notification"></label>
+
+                            </form>
+
+                        </div>
+                    </div>      <!-- END NEWSLETTER FORM -->
+
+
+                </div>     <!-- End row -->
+            </div>    <!-- End Inner Bg -->
+        </div>       <!-- End container -->
+    </section>    <!-- END NEWSLETTER-1 -->
+{% endblock %}

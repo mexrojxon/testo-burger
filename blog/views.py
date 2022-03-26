@@ -12,6 +12,7 @@ class BlogListView(ListView):
     queryset = BlogPostModel.objects.order_by('-pk')
     model = BlogPostModel
     context_object_name = 'posts'
+    paginate_by = 3
 
     def get_queryset(self, *args, **kwargs):
         qs = BlogPostModel.objects.order_by('-pk')
@@ -22,7 +23,7 @@ class BlogListView(ListView):
 
 class BlogDetailView(DetailView):
     model = BlogPostModel
-    template_name = 'main/blog-details.html'
+    template_name = 'main/blog_detail.html'
     context_object_name = 'post'
 
 

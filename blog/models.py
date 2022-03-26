@@ -5,7 +5,7 @@ from django.utils.translation import gettext_lazy as _
 class AuthorModel(models.Model):
     first_name = models.CharField(max_length=100, verbose_name=_('first name'))
     last_name = models.CharField(max_length=100, verbose_name=_('last name'))
-    avatar = models.ImageField(upload_to='author-avatars/', verbose_name=_('avatar'))
+    avatar = models.ImageField(upload_to='author-avatars/', blank=True, verbose_name=_('avatar'))
 
     @property
     def full_name(self):
