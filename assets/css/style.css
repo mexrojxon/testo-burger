@@ -3859,7 +3859,7 @@ span.ico-holder {
 }
 
 #reviews-1.bg-image {
-  background-image: url(../images/reviews.jpg);
+  background-image: url(../images/bg-home.jpg);
 }
 
 /*------------------------------------------*/
@@ -5475,7 +5475,7 @@ select:-webkit-autofill:focus {
 }
 
 #contacts-page {
-  background-image: url(../images/contacts-page.jpg);
+  background-image: url(../images/banner/contacts..jpg);
 }
 
 #gallery-page {

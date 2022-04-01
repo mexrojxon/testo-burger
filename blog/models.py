@@ -55,7 +55,6 @@ class CommentModel(models.Model):
                              )
     name = models.CharField(max_length=64, verbose_name=_('name'))
     email = models.EmailField(verbose_name=_('email'))
-    phone = models.CharField(max_length=13, verbose_name=_('phone'))
     comment = models.TextField(verbose_name=_('comment'))
     created_at = models.DateTimeField(auto_now_add=True, verbose_name=_('created at'))
 

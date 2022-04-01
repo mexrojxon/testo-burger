@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .models import *
+from .form import *
 
 
 @admin.register(BlogPostModel)
@@ -8,6 +9,7 @@ class BlogPostAdmin(admin.ModelAdmin):
     list_filter = ['created_at', 'tags']
     search_fields = ['title', 'tags', 'description']
     list_display_links = ['title']
+
 
 
 @admin.register(BlogTagModel)

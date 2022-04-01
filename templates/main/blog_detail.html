@@ -16,8 +16,10 @@
                                     <div class="breadcrumb-nav">
                                         <nav aria-label="breadcrumb">
                                             <ol class="breadcrumb">
-                                                <li class="breadcrumb-item"><a href="demo-1.html">Home</a></li>
-                                                <li class="breadcrumb-item"><a href="blog-listing.html">Blog</a></li>
+                                                <li class="breadcrumb-item"><a href="{% url 'pages:home' %}">Home</a>
+                                                </li>
+                                                <li class="breadcrumb-item"><a
+                                                        href="{% url 'blog:blog_list' %}">Blog</a></li>
                                                 <li class="breadcrumb-item active" aria-current="page">Blog Post</li>
                                             </ol>
                                         </nav>
@@ -67,7 +69,7 @@
 
                         <!-- BLOG POST INNER IMAGE -->
                         <div class="post-inner-img">
-                            <img class="img-fluid" src="post.main_image" alt="blog-post-image"/>
+                            <img class="img-fluid" src="{{ post.main_image.url }}" alt="blog-post-image"/>
                         </div>
 
 
@@ -125,25 +127,29 @@
 
                         <!-- Previous Post -->
                         <div class="col-md-5">
-                            <div class="prev-post mb-30">
-                                <h6 class="h6-xl">Previous Post</h6>
-                                <a href="single-post.html">Congue bulum Testo tincidunt at purus pretium magnis</a>
-                            </div>
+                            {% if post.get_previous_by_created_at %}
+                                <div class="prev-post mb-30">
+                                    <h6 class="h6-xl">Previous Post</h6>
+                                    <a href="{% url 'blogs:blog_detail' pk=post.get_previous_by_created_at.id %}">{{ post.get_previous_by_created_at.title }}</a>
+                                </div>
+                            {% endif %}
                         </div>
 
                         <!-- All Posts -->
                         <div class="col-md-2 text-center">
                             <div class="all-posts mb-30">
-                                <a href="blog-listing.html"><i class="fas fa-th-large"></i></a>
+                                <a href="{% url 'blog:blog_list' %}"><i class="fas fa-th-large"></i></a>
                             </div>
                         </div>
 
                         <!-- Next Post -->
                         <div class="col-md-5 text-right">
-                            <div class="next-post mb-30">
-                                <h6 class="h6-xl">Next Post</h6>
-                                <a href="single-post.html">12 neque dolor primis a libero tempus augue tempor</a>
-                            </div>
+                            {% if post.get_next_by_created_at %}
+                                <div class="next-post mb-30">
+                                    <h6 class="h6-xl">Next Post</h6>
+                                    <a href="{% url 'blogs:blog_detail' pk=post.get_next_by_created_at.id %}">{{ post.get_next_by_created_at.title }}</a>
+                                </div>
+                            {% endif %}
                         </div>
 
                     </div>
@@ -167,134 +173,40 @@
                     <div class="comments-wrapper">
 
                         <!-- Title -->
-                        <h5 class="h5-lg">4 Comments</h5>
+                        {% if post.comments.all %}
+                            <h5 class="h5-lg">{{ post.comments.all.count }} Comments</h5>
+                        {% endif %}
 
 
                         <!-- COMMENT #1 -->
-                        <div class="media">
+                        {% for comment in post.comments.all %}
+                            <div class="media">
 
-                            <!-- Comment-1 Avatar -->
-                            <img class="mr-3" src="images/post-author-1.jpg" alt="comment-avatar">
+                                <!-- Comment-4 Avatar -->
+                                <img class="mr-3" src="{% static 'images/post-author-4.jpg'%}" alt="comment-avatar">
 
-                            <div class="media-body">
+                                <div class="media-body">
 
-                                <!-- Comment-1 Meta -->
-                                <div class="comment-meta">
-                                    <h6 class="h6-md mt-0">Thomas</h6>
-                                    <span class="comment-date">5 days ago&#8194;- </span>
-                                    <span class="btn-reply"><a href="#leave-comment" class="internal-link"><i
-                                            class="fas fa-reply"></i> Reply</a></span>
-                                </div>
-
-                                <!-- Comment-1 Text -->
-                                <p class="mb-40">Etiam sapien sem magna at vitae pulvinar congue augue egestas pretium
-                                    neque viverra
-                                    suscipit egestas magna porta ratione, mollis risus lectus porta rutrum arcu aenean
-                                    primis in augue
-                                    luctus neque purus ipsum neque dolor primis purus efficitur ipsum primis in cubilia
-                                    laoreet augue
-                                </p>
-
-                                <hr/>
-
-                                <!-- COMMENT #2 -->
-                                <div class="media">
-
-                                    <!-- Comment-2 Avatar -->
-                                    <a href="#" class="pr-3">
-                                        <img src="images/post-author-2.jpg" alt="comment-avatar">
-                                    </a>
-
-                                    <div class="media-body">
-
-                                        <!-- Comment-2 Meta -->
-                                        <div class="comment-meta">
-                                            <h6 class="h6-md mt-0">David Clark</h6>
-                                            <span class="comment-date">6 days ago&#8194;- </span>
-                                            <span class="btn-reply"><a href="#leave-comment" class="internal-link"><i
-                                                    class="fas fa-reply"></i> Reply</a></span>
-                                        </div>
-
-                                        <!-- Comment-2 Text -->
-                                        <p>Etiam sapien sem magna at vitae pulvinar congue augue egestas pretium neque
-                                            and viverra
-                                            suscipit porta ratione, mollis risus lectus porta aliquet lorem purus mollis
-                                        </p>
-
+                                    <!-- Comment-4 Meta -->
+                                    <div class="comment-meta">
+                                        <h6 class="h6-md mt-0">{{ comment.name }}</h6>
+                                        <span class="comment-date">{{ comment.created_at|timesince }} ago&#8194;- </span>
+                                        <span class="btn-reply"><a href="#leave-comment" class="internal-link"><i
+                                                class="fas fa-reply"></i> Reply</a></span>
                                     </div>
-                                </div>    <!-- END COMMENT #2 -->
 
-                            </div>
-                        </div>    <!-- END COMMENT #1 -->
+                                    <!-- Comment-4 Text -->
+                                    <p>{{ comment.comment }}</p>
+                                    </p>
 
-
-                        <hr/>
-
-
-                        <!-- COMMENT #3 -->
-                        <div class="media">
-
-                            <!-- Comment-4 Avatar -->
-                            <img class="mr-3" src="images/post-author-3.jpg" alt="comment-avatar">
-
-                            <div class="media-body">
-
-                                <!-- Comment-4 Meta -->
-                                <div class="comment-meta">
-                                    <h6 class="h6-md mt-0">Jasmine</h6>
-                                    <span class="comment-date">13 days ago&#8194;- </span>
-                                    <span class="btn-reply"><a href="#leave-comment" class="internal-link"><i
-                                            class="fas fa-reply"></i> Reply</a></span>
                                 </div>
-
-                                <!-- Comment-4 Text -->
-                                <p>Porta ratione, mollis risus lectus porta rutrum arcu aenean primis in augue luctus
-                                    neque purus
-                                    ipsum neque dolor primis libero tempus, tempor posuere ligula varius impedit enim
-                                    tempor vitae
-                                    pulvinar at congue augue egestas. Praesent aliquet lorem purus, quis mollis nisi
-                                    laoreet
-                                </p>
-
-                            </div>
-                        </div>    <!-- END COMMENT #3 -->
+                            </div>    <!-- END COMMENT #4 -->
 
 
-                        <hr/>
-
-
-                        <!-- COMMENT #4 -->
-                        <div class="media">
-
-                            <!-- Comment-4 Avatar -->
-                            <img class="mr-3" src="images/post-author-4.jpg" alt="comment-avatar">
-
-                            <div class="media-body">
-
-                                <!-- Comment-4 Meta -->
-                                <div class="comment-meta">
-                                    <h6 class="h6-md mt-0">Rady Smith</h6>
-                                    <span class="comment-date">42 days ago&#8194;- </span>
-                                    <span class="btn-reply"><a href="#leave-comment" class="internal-link"><i
-                                            class="fas fa-reply"></i> Reply</a></span>
-                                </div>
-
-                                <!-- Comment-4 Text -->
-                                <p>Etiam sapien sem magna at vitae pulvinar congue augue egestas pretium neque viverra
-                                    suscipit
-                                    egestas magna porta ratione, mollis risus lectus porta rutrum arcu an aenean primis
-                                    auctor
-                                </p>
-
-                            </div>
-                        </div>    <!-- END COMMENT #4 -->
-
-
-                        <hr/>
-
-
+                            <hr/>
+                        {% endfor %}
                         <!-- COMMENT FORM -->
-                        <div id="leave-comment">
+                        <div id="">
 
                             <!-- Title -->
                             <h5 class="h5-lg">Leave a Comment</h5>
@@ -303,17 +215,18 @@
                             <p class="p-sm grey-color">Your email address will not be published. Required fields are
                                 marked *</p>
 
-                            <form name="commentForm" class="row comment-form">
-
+                            <form action="{% url 'blog:blog_comment' pk=post.id %}" method="POST"
+                                  class="row comment-form">
+                                {% csrf_token %}
                                 <div class="col-md-12 input-message">
                                     <p>Add Comment *</p>
-                                    <textarea class="form-control message" name="message" rows="6"
+                                    <textarea class="form-control " name="comment" rows="6"
                                               placeholder="Enter Your Comment Here* ..." required></textarea>
                                 </div>
 
                                 <div class="col-md-12">
                                     <p>Name*</p>
-                                    <input type="text" name="name" class="form-control name"
+                                    <input type="text" name="name" class="form-control"
                                            placeholder="Enter Your Name*" required>
                                 </div>
 
@@ -327,11 +240,11 @@
                                 <div class="col-lg-12 form-btn">
                                     <button type="submit" class="btn btn-red tra-red-hover submit">Post Comment</button>
                                 </div>
-
-                                <!-- Contact Form Message -->
-                                <div class="col-md-12 comment-form-msg text-center">
-                                    <div class="sending-msg"><span class="loading"></span></div>
-                                </div>
+                                {##}
+                                {#                                <!-- Contact Form Message -->#}
+                                {#                                <div class="col-md-12 comment-form-msg text-center">#}
+                                {#                                    <div class="sending-msg"><span class="loading"></span></div>#}
+                                {#                                </div>#}
 
                             </form>
 
