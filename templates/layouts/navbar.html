@@ -48,12 +48,11 @@
                     <!-- DROPDOWN MENU -->
                     <li><a href="#">About</a>
                         <ul>
-                            <li><a href="about.html">About Testo</a></li>
+                            <li><a href="{% url 'pages:about' %}">About Testo</a></li>
                             <li><a href="{% url 'pages:team' %}">Meet The Team</a></li>
                             <li><a href="gallery.html">Images Gallery</a></li>
-                            <li><a href="gift-cards.html">Gift Cards</a></li>
                             <li><a href="{% url 'pages:faqs' %}">F.A.Q.s</a></li>
-                            <li><a href="terms.html">Terms & Privacy</a></li>
+                            <li><a href="{% url 'pages:terms' %}">Terms & Privacy</a></li>
                         </ul>
                     </li>
 
@@ -84,7 +83,7 @@
                     <!-- DROPDOWN MENU -->
                     <li><a href="#">Contacts</a>
                         <ul>
-                            <li><a href="booking.html">Book A Table</a></li>
+                            <li><a href="{% url 'customer:booking' %}">Book A Table</a></li>
                             <li><a href="{% url 'pages:location' %}">Our Locations</a></li>
                             <li><a href="{% url 'pages:contact' %}">Contact Us</a></li>
                         </ul>

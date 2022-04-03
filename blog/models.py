@@ -1,6 +1,13 @@
+from django.conf import settings
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
+
+class IpModel(models.Model):
+    ip = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.ip
 
 class AuthorModel(models.Model):
     first_name = models.CharField(max_length=100, verbose_name=_('first name'))
@@ -38,6 +45,11 @@ class BlogPostModel(models.Model):
     author = models.ForeignKey(AuthorModel, on_delete=models.RESTRICT, related_name='posts', verbose_name=_('author'))
     tags = models.ManyToManyField(BlogTagModel, related_name='posts', verbose_name=_('tags'))
     created_at = models.DateTimeField(auto_now_add=True, verbose_name=_('created at'))
+    views = models.ManyToManyField(IpModel, related_name="post_views", blank=True)
+
+
+    def total_views(self):
+        return self.views.count()
 
     def __str__(self):
         return '{} ...'.format(self.title[:100])
@@ -57,6 +69,7 @@ class CommentModel(models.Model):
     email = models.EmailField(verbose_name=_('email'))
     comment = models.TextField(verbose_name=_('comment'))
     created_at = models.DateTimeField(auto_now_add=True, verbose_name=_('created at'))
+
 
     class Meta:
         verbose_name = 'comment'

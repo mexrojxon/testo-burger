@@ -42,3 +42,9 @@ class FAQsPageView(ListView):
     model = FAQsModel
     context_object_name = 'Faqs'
     template_name = 'main/faqs.html'
+
+class TermsPageView(TemplateView):
+    template_name = 'main/terms.html'
+
+class AboutPageView(TemplateView):
+    template_name = 'main/about.html'

@@ -100,3 +100,12 @@ class FAQsModel(models.Model):
 
     def __str__(self):
         return self.question
+
+
+class BookingModel(models.Model):
+    date = models.DateTimeField(auto_now_add=True, verbose_name=_('date'))
+    full_name = models.CharField(max_length=50, verbose_name=_('full_name'))
+    email = models.EmailField(verbose_name=_('email'))
+    phone = models.CharField(max_length=20, verbose_name=_('phone'))
+    messege = models.TextField(verbose_name=_('messege'))
+    is_active = models.BooleanField(default=True, verbose_name=_('is_active'))

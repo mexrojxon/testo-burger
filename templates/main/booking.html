@@ -1,0 +1,163 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <!-- PAGE CONTENT
+    ============================================= -->
+    <div id="page" class="page">
+
+
+        <!-- PAGE HERO
+        ============================================= -->
+        <div id="booking-page" class="page-hero-section division">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 offset-lg-1">
+                        <div class="hero-txt text-center white-color">
+
+                            <!-- Breadcrumb -->
+                            <div id="breadcrumb">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="breadcrumb-nav">
+                                            <nav aria-label="breadcrumb">
+                                                <ol class="breadcrumb">
+                                                    <li class="breadcrumb-item"><a href="{% url 'pages:home' %}">Home</a></li>
+                                                    <li class="breadcrumb-item active" aria-current="page">Booking</li>
+                                                </ol>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Title -->
+                            <h2 class="h2-xl">Reserve A Table</h2>
+
+                        </div>
+                    </div>
+                </div>      <!-- End row -->
+            </div>       <!-- End container -->
+        </div>    <!-- END PAGE HERO -->
+
+
+        <!-- BOOKING-2
+        ============================================= -->
+        <div id="booking-2" class="wide-70 booking-section division">
+            <div class="container">
+                <div class="row">
+
+
+                    <!-- BOOKING FORM -->
+                    <div class="col-lg-10 col-xl-8 offset-lg-1 offset-xl-2">
+                        <div class="form-holder">
+
+                            <!-- Text -->
+                            <p class="p-xl text-center">
+                                Fill in the form below or give us a call <a href="tel:123456789">789-654-3210</a>
+                            </p>
+
+                            <!-- Form -->
+                            <form method="post" action="{% url 'customer:booking' %}" class="row booking-form">
+                                {% csrf_token %}
+                                <!-- Form Input -->
+                                <div class="col-lg-6">
+                                    <input  type="text" name="date" class="form-control date"
+                                           placeholder="Select Date*" required>
+                                </div>
+
+                                <!-- Form Input -->
+                                <div class="col-lg-6">
+                                    <input type="text" name="full_name" class="form-control name" placeholder="Your Name*"
+                                           required>
+                                </div>
+
+                                <!-- Form Input -->
+                                <div class="col-lg-6">
+                                    <input type="email" name="email" class="form-control email"
+                                           placeholder="Email Address*" required>
+                                </div>
+
+                                <!-- Form Input -->
+                                <div class="col-lg-6">
+                                    <input type="tel" name="phone" class="form-control phone"
+                                           placeholder="Phone Number*" required>
+                                </div>
+
+                                <!-- Form Textarea -->
+                                <div class="col-md-12">
+                                    <textarea name="message" class="form-control message" rows="4"
+                                              placeholder="Your Message ..."></textarea>
+                                </div>
+
+                                <!-- Form Button -->
+                                <div class="col-md-12 mt-10">
+                                    <button type="submit" class="btn btn-md btn-red tra-red-hover submit">Request
+                                        Booking
+                                    </button>
+                                </div>
+                            </form>    <!-- End Form -->
+
+                        </div>
+                    </div>    <!-- END BOOKING FORM -->
+
+                </div>    <!-- End row -->
+            </div>       <!-- End container -->
+        </div>    <!-- END BOOKING-2 -->
+
+
+        <!-- BANNER-3
+        ============================================= -->
+        <section id="banner-3" class="bg-yellow banner-section division">
+            <div class="container">
+                <div class="row d-flex align-items-center">
+
+
+                    <!-- BANNER TEXT -->
+                    <div class="col-md-7 col-lg-6">
+                        <div class="banner-3-txt coffee-color">
+
+                            <!-- Title  -->
+                            <h4 class="h4-xl">Download mobile App and</h4>
+                            <h2>save up to 20%</h2>
+
+                            <!-- Text -->
+                            <p class="p-md">Aliquam a augue suscipit, luctus neque purus ipsum and neque dolor primis
+                                libero tempus,
+                                blandit varius
+                            </p>
+
+                            <!-- Store Badges -->
+                            <div class="stores-badge">
+
+                                <!-- AppStore -->
+                                <a href="#" class="store">
+                                    <img class="appstore-original" src="{% static 'images/appstore.png' %}" alt="appstore-logo"/>
+                                </a>
+
+                                <!-- Google Play -->
+                                <a href="#" class="store">
+                                    <img class="googleplay-original" src="{% static 'images/googleplay.png' %}" alt="googleplay-logo"/>
+                                </a>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <!-- BANNER IMAGE -->
+                    <div class="col-md-5 col-lg-6">
+                        <div class="banner-3-img">
+                            <img class="img-fluid" src="{% static 'images/e-shop.png' %}" alt="banner-image">
+                        </div>
+                    </div>
+
+
+                </div>      <!-- End row -->
+            </div>        <!-- End container -->
+        </section>    <!-- END BANNER-3 -->
+    </div>    <!-- END PAGE CONTENT -->
+
+{% endblock %}

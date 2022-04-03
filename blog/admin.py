@@ -2,6 +2,7 @@ from django.contrib import admin
 from .models import *
 from .form import *
 
+admin.site.register(IpModel)
 
 @admin.register(BlogPostModel)
 class BlogPostAdmin(admin.ModelAdmin):
