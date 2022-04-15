@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 
    <!-- FOOTER-1
     ============================================= -->
@@ -15,7 +16,7 @@
                         <div class="footer-logo"><img src="{% static 'images/logo-01.png' %} " alt="footer-logo"/></div>
 
                         <!-- Footer Copyright -->
-                        <p>&copy; 2020 Testo. All Rights Reserved</p>
+                        <p>&copy; {% trans '2020 Testo. All Rights Reserved' %}</p>
 
                     </div>
                 </div>
@@ -32,7 +33,7 @@
                         <!-- Contacts -->
                         <p class="p-lg foo-email">Email: <a href="mailto:yourdomain@mail.com">hello@yourdomain.com</a>
                         </p>
-                        <p class="p-lg">Call Now: <span class="yellow-color"><a
+                        <p class="p-lg">{% trans 'Call Now' %}: <span class="yellow-color"><a
                                 href="tel:123456789">789-654-3210</a></span></p>
 
                     </div>

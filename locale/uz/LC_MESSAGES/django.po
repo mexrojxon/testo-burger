@@ -1,0 +1,457 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-06 11:07+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: blog/models.py:13
+msgid "first name"
+msgstr "Ism"
+
+#: blog/models.py:14
+msgid "last name"
+msgstr "Familya"
+
+#: blog/models.py:15
+msgid "avatar"
+msgstr ""
+
+#: blog/models.py:30 blog/models.py:41 pages/models.py:6
+msgid "title"
+msgstr "Sarlavha"
+
+#: blog/models.py:42 pages/models.py:7 product/models.py:44
+msgid "description"
+msgstr "tavsifi"
+
+#: blog/models.py:43
+msgid "main image"
+msgstr "Asosiy rasm"
+
+#: blog/models.py:44 pages/models.py:8
+msgid "banner"
+msgstr ""
+
+#: blog/models.py:45
+msgid "author"
+msgstr "Muallif"
+
+#: blog/models.py:46 product/models.py:25
+msgid "tags"
+msgstr ""
+
+#: blog/models.py:47 blog/models.py:71 pages/models.py:21 pages/models.py:38
+#: pages/models.py:57 product/models.py:7 product/models.py:18
+#: product/models.py:29 product/models.py:63
+msgid "created at"
+msgstr "yaratilgan vaqti"
+
+#: blog/models.py:66
+msgid "post"
+msgstr ""
+
+#: blog/models.py:68 pages/models.py:20 pages/models.py:32 product/models.py:6
+#: product/models.py:17 product/models.py:28 product/models.py:39
+msgid "name"
+msgstr "Nomi"
+
+#: blog/models.py:69 customer/models.py:8 pages/models.py:33
+#: pages/models.py:108
+msgid "email"
+msgstr ""
+
+#: blog/models.py:70
+msgid "comment"
+msgstr ""
+
+#: customer/models.py:6 pages/models.py:106
+msgid "date"
+msgstr "sana"
+
+#: customer/models.py:7 pages/models.py:107
+msgid "full_name"
+msgstr "To'liq ismi"
+
+#: customer/models.py:9 pages/models.py:109
+msgid "phone"
+msgstr "Telefon"
+
+#: customer/models.py:10 pages/models.py:35 pages/models.py:110
+msgid "message"
+msgstr "xabar"
+
+#: customer/models.py:11 pages/models.py:53 pages/models.py:111
+msgid "is_active"
+msgstr ""
+
+#: customer/models.py:12 pages/models.py:79
+msgid "created_at"
+msgstr ""
+
+#: pages/models.py:9 pages/models.py:78
+msgid "active"
+msgstr ""
+
+#: pages/models.py:15
+msgid "background"
+msgstr ""
+
+#: pages/models.py:16
+msgid "backgrounds"
+msgstr ""
+
+#: pages/models.py:34
+msgid "theme"
+msgstr "mavzu"
+
+#: pages/models.py:50
+msgid "city"
+msgstr ""
+
+#: pages/models.py:51
+msgid "number"
+msgstr "raqam"
+
+#: pages/models.py:52
+msgid "full_address"
+msgstr "To'liq manzil"
+
+#: pages/models.py:54
+msgid "img"
+msgstr ""
+
+#: pages/models.py:69
+msgid "first_name"
+msgstr "Ism"
+
+#: pages/models.py:70
+msgid "last_name"
+msgstr "Familya"
+
+#: pages/models.py:75
+msgid "position"
+msgstr "Jamoagi o'rni"
+
+#: pages/models.py:80
+msgid "photo"
+msgstr ""
+
+#: pages/models.py:81
+msgid "instagram"
+msgstr ""
+
+#: pages/models.py:82
+msgid "twitter"
+msgstr ""
+
+#: pages/models.py:83
+msgid "facebook"
+msgstr ""
+
+#: pages/models.py:94
+msgid "question"
+msgstr "Savol"
+
+#: pages/models.py:95
+msgid "answer"
+msgstr "Javob"
+
+#: product/models.py:13 product/models.py:51
+msgid "category"
+msgstr ""
+
+#: product/models.py:14
+msgid "categories"
+msgstr ""
+
+#: product/models.py:24 product/models.py:61
+msgid "tag"
+msgstr ""
+
+#: product/models.py:35 product/models.py:56
+msgid "ingredient"
+msgstr ""
+
+#: product/models.py:36
+msgid "ingredients"
+msgstr ""
+
+#: product/models.py:40
+msgid "image"
+msgstr ""
+
+#: product/models.py:41
+msgid "price"
+msgstr "Narx"
+
+#: product/models.py:42
+msgid "real_price"
+msgstr ""
+
+#: product/models.py:43
+msgid "discount"
+msgstr "chegirma"
+
+#: product/models.py:45
+msgid "mass"
+msgstr "massasi"
+
+#: product/models.py:66
+msgid "product"
+msgstr "maxsulot"
+
+#: product/models.py:67
+msgid "products"
+msgstr "maxsulotlar"
+
+#: templates/layouts/footer.html:19
+msgid "2020 Testo. All Rights Reserved"
+msgstr "2020 Testo. Barcha huquqlar himoyalangan"
+
+#: templates/layouts/footer.html:36
+msgid "Call Now"
+msgstr "Hozir qo'ng'iroq qiling"
+
+#: templates/layouts/navbar.html:50
+msgid "About"
+msgstr "Biz haqimizda"
+
+#: templates/layouts/navbar.html:52 templates/main/about.html:41
+msgid "About Testo"
+msgstr "Testo Haqida"
+
+#: templates/layouts/navbar.html:53 templates/main/team.html:36
+msgid "Meet The Team"
+msgstr "Jamoa bilan tanishing"
+
+#: templates/layouts/navbar.html:54
+msgid "Images Gallery"
+msgstr "Rasmlar galereyasi"
+
+#: templates/layouts/navbar.html:55 templates/main/faqs.html:28
+#: templates/main/faqs.html:37
+msgid "F.A.Q.s"
+msgstr "Ko'p berilgan savollar"
+
+#: templates/layouts/navbar.html:56 templates/main/terms.html:29
+#: templates/main/terms.html:38
+msgid "Terms & Privacy"
+msgstr "Shartlar va Maxfiylik"
+
+#: templates/layouts/navbar.html:61
+msgid "Our Menu"
+msgstr "Bizning menyu"
+
+#: templates/layouts/navbar.html:80 templates/main/blog_detail.html:23
+msgid "Blog"
+msgstr ""
+
+#: templates/layouts/navbar.html:85
+msgid "Contacts"
+msgstr "Bog'lanish"
+
+#: templates/layouts/navbar.html:87
+msgid "Book A Table"
+msgstr "Bron qilish"
+
+#: templates/layouts/navbar.html:88 templates/main/location.html:37
+msgid "Our Locations"
+msgstr "Bizning manzillar"
+
+#: templates/layouts/navbar.html:89 templates/main/contact.html:26
+#: templates/main/contact.html:36
+msgid "Contact Us"
+msgstr "Biz bilan bog'lanish"
+
+#: templates/main/about.html:30 templates/main/blog.html:21
+#: templates/main/blog_detail.html:20 templates/main/booking.html:26
+#: templates/main/contact.html:25 templates/main/faqs.html:26
+#: templates/main/location.html:26 templates/main/menu1.html:26
+#: templates/main/team.html:26 templates/main/terms.html:28
+msgid "Home"
+msgstr "Asosiy"
+
+#: templates/main/about.html:32
+msgid "About Us"
+msgstr "Biz haqimizda"
+
+#: templates/main/about.html:72 templates/main/home.html:67
+msgid "Nothing brings people together like a good burger"
+msgstr "Hech narsa odamlarni yaxshi burger kabi birlashtirmaydi"
+
+#: templates/main/about.html:88
+msgid "Quaerat sodales sapien euismod purus blandit"
+msgstr ""
+
+#: templates/main/about.html:142 templates/main/home.html:89
+msgid "Burgers"
+msgstr "Burgerlar"
+
+#: templates/main/about.html:155 templates/main/home.html:103
+msgid "Fries"
+msgstr "Fri"
+
+#: templates/main/about.html:169 templates/main/home.html:117
+msgid "Chicken"
+msgstr "Tovuq"
+
+#: templates/main/about.html:182 templates/main/home.html:131
+msgid "Salads"
+msgstr "Salatlar"
+
+#: templates/main/about.html:195
+msgid "Desserts"
+msgstr "Shirinliklar"
+
+#: templates/main/about.html:208
+msgid "Drinks"
+msgstr "Ichimliklar"
+
+#: templates/main/about.html:218
+msgid "Explore Full Menu"
+msgstr "To'liq menyu bilan tanishing"
+
+#: templates/main/about.html:344
+msgid "Events & Catering"
+msgstr "Tadbirlar va ovqatlanish"
+
+#: templates/main/blog.html:23
+msgid "Our Blog"
+msgstr "Bizning blogimiz"
+
+#: templates/main/blog.html:36
+msgid "Blog Listing"
+msgstr "Blog ro'yxati"
+
+#: templates/main/blog.html:92
+msgid "Latest Articles"
+msgstr "Eng so'nggi maqolalar"
+
+#: templates/main/blog.html:141
+msgid "Most Read Articles"
+msgstr "Eng ko'p o'qilgan maqolalar"
+
+#: templates/main/blog_detail.html:24
+msgid "Blog Post"
+msgstr ""
+
+#: templates/main/blog_detail.html:33
+msgid "Single Blog Post"
+msgstr ""
+
+#: templates/main/blog_detail.html:133
+msgid "Previous Post"
+msgstr "Oldingi"
+
+#: templates/main/blog_detail.html:150
+msgid "Next Post"
+msgstr "Keyingi"
+
+#: templates/main/blog_detail.html:178
+msgid "Comments"
+msgstr "Izohlar"
+
+#: templates/main/blog_detail.html:213
+msgid "Leave a Comment"
+msgstr "Izoh qoldiring"
+
+#: templates/main/blog_detail.html:223
+msgid "Add Comment"
+msgstr "Izoh qo'shish"
+
+#: templates/main/blog_detail.html:229
+msgid "Ismingiz"
+msgstr ""
+
+#: templates/main/booking.html:27 templates/main/booking.html:97
+msgid "Booking"
+msgstr "Band qilish"
+
+#: templates/main/booking.html:36
+msgid "Reserve A Table"
+msgstr "Jadvalni zaxiralash"
+
+#: templates/main/booking.html:58
+msgid "Fill in the form below or give us a call"
+msgstr "Quyidagi shaklni to'ldiring yoki bizga qo'ng'iroq qiling"
+
+#: templates/main/booking.html:122 templates/main/contact.html:203
+#: templates/main/team.html:147
+msgid "Download mobile App and"
+msgstr "Mobil ilovani yuklab oling va"
+
+#: templates/main/booking.html:123 templates/main/contact.html:204
+#: templates/main/team.html:148
+#, python-format
+msgid "save up to 20%"
+msgstr "20% gacha tejang"
+
+#: templates/main/contact.html:63
+msgid "Location"
+msgstr "Manzil"
+
+#: templates/main/contact.html:79 templates/main/contact.html:95
+msgid "Working Hours"
+msgstr "Ish vaqti"
+
+#: templates/main/contact.html:82
+msgid "Mon-Fri"
+msgstr "Dush-Jum"
+
+#: templates/main/contact.html:83
+msgid "Saturday"
+msgstr "Shanba"
+
+#: templates/main/contact.html:84
+msgid "Sunday"
+msgstr "Yakshanba"
+
+#: templates/main/contact.html:134
+msgid "Get in Touch"
+msgstr "Aloqa qiling"
+
+#: templates/main/faqs.html:84
+msgid "Still Have A ?"
+msgstr "Yana savolingiz bormi?"
+
+#: templates/main/home.html:32
+msgid "Open Daily"
+msgstr "Har kuni ochiq"
+
+#: templates/main/home.html:200
+msgid "Explore Our Menu"
+msgstr "Menyumiz bilan tanishing"
+
+#: templates/main/location.html:27
+msgid "Locations"
+msgstr "Joylashuvlar"
+
+#: templates/main/location.html:69
+msgid "Phone"
+msgstr "Raqam"
+
+#: templates/main/location.html:72
+msgid "Address"
+msgstr "Manzillar"
+
+#: templates/main/menu1.html:36
+msgid "Main Menu"
+msgstr "Asosiy menu"
+
+#: templates/main/team.html:27
+msgid "Our Team"
+msgstr "Bizning Jamoa"

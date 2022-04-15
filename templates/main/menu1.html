@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% load i18n %}
+{% load my_tags %}
 {% block content %}
     <!-- PAGE CONTENT
 ============================================= -->
@@ -23,7 +24,7 @@
                                             <nav aria-label="breadcrumb">
                                                 <ol class="breadcrumb">
                                                     <li class="breadcrumb-item"><a
-                                                            href="{% url 'pages:home' %}">Home</a></li>
+                                                            href="{% url 'pages:home' %}">{% trans 'Home' %}</a></li>
                                                     <li class="breadcrumb-item active" aria-current="page">Menu</li>
                                                 </ol>
                                             </nav>
@@ -33,7 +34,7 @@
                             </div>
 
                             <!-- Title -->
-                            <h2 class="h2-xl">Main Menu </h2>
+                            <h2 class="h2-xl">{% trans 'Main Menu' %} </h2>
 
                         </div>
                     </div>
@@ -112,8 +113,15 @@
 
                                     <!-- Add To Cart -->
                                     <div class="add-to-cart bg-yellow ico-10">
-                                        <a href="product-single.html"><span class="flaticon-shopping-bag"></span> Add to
-                                            Cart</a>
+                                        {% if request|is_cart:object %}
+                                            <a href="#"><span
+                                                    class="flaticon-shopping-bag"></span>{% trans ' Remove from Cart' %}
+                                            </a>
+                                        {% else %}
+                                            <a href="#"><span
+                                                    class="flaticon-shopping-bag"></span>{% trans ' Add to Cart' %}
+                                            </a>
+                                        {% endif %}
                                     </div>
 
                                 </div>
@@ -125,7 +133,7 @@
             </div>       <!-- End container -->
         </section>    <!-- END MENU-6 -->
 
-        {% if page_obj.paginator.count > 1 %}
+        {% if page_obj.paginator.count > 8 %}
             <!-- PAGE PAGINATION
             ============================================= -->
             <div class="bg-color-01 page-pagination division">
@@ -134,15 +142,17 @@
                         <div class="col-md-12">
                             <nav aria-label="Page navigation">
                                 <ul class="pagination justify-content-center">
+
+                                    <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1"><i
+                                            class="fas fa-angle-left"></i></a></li>
                                     {% for page in page_obj.paginator.page_range %}
-                                        <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1"><i
-                                                class="fas fa-angle-left"></i></a></li>
                                         <li {% if page == page_obj.number %}class="page-item active"{% endif %}><a
                                                 class="page-link" href="?page={{ page }}">{{ page }}</a>
                                         </li>
-                                        <li class="page-item"><a class="page-link" href="#"><i
-                                                class="fas fa-angle-right"></i></a></li>
                                     {% endfor %}
+                                    <li class="page-item"><a class="page-link" href="#"><i
+                                            class="fas fa-angle-right"></i></a></li>
+
                                 </ul>
                             </nav>
 

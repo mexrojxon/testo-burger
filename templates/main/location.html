@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% load i18n %}
 {% block content %}
 
     <!-- PAGE CONTENT
@@ -23,8 +23,8 @@
                                         <div class="breadcrumb-nav">
                                             <nav aria-label="breadcrumb">
                                                 <ol class="breadcrumb">
-                                                    <li class="breadcrumb-item"><a href="{% url 'pages:home' %}">Home</a></li>
-                                                    <li class="breadcrumb-item active" aria-current="page">Locations
+                                                    <li class="breadcrumb-item"><a href="{% url 'pages:home' %}">{%  trans 'Home' %}</a></li>
+                                                    <li class="breadcrumb-item active" aria-current="page">{% trans 'Locations' %}
                                                     </li>
                                                 </ol>
                                             </nav>
@@ -34,7 +34,7 @@
                             </div>
 
                             <!-- Title -->
-                            <h2 class="h2-xl">Our Locations</h2>
+                            <h2 class="h2-xl">{% trans 'Our Locations' %}</h2>
 
                         </div>
                     </div>
@@ -66,10 +66,10 @@
                                     <h5 class="h5-xl red-color">{{ location.city }}</h5>
 
                                     <!-- Phone -->
-                                    <h6 class="h6-xl">Phone: <span><a href="tel:{{ location.number }}">{{ location.number }}</a></span></h6>
+                                    <h6 class="h6-xl">{% trans 'Phone' %}: <span><a href="tel:{{ location.number }}">{{ location.number }}</a></span></h6>
 
                                     <!-- Address -->
-                                    <h6 class="h6-lg mt-20">Address</h6>
+                                    <h6 class="h6-lg mt-20">{% trans 'Address' %}</h6>
                                     <p class="grey-color">{{  location.full_address }}</p>
 
                                     <!-- Working Hours -->

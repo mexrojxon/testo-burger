@@ -1,0 +1,459 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-06 11:07+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: blog/models.py:13
+msgid "first name"
+msgstr "имя"
+
+#: blog/models.py:14
+msgid "last name"
+msgstr "Фамилия"
+
+#: blog/models.py:15
+msgid "avatar"
+msgstr "аватар"
+
+#: blog/models.py:30 blog/models.py:41 pages/models.py:6
+msgid "title"
+msgstr "заглавие"
+
+#: blog/models.py:42 pages/models.py:7 product/models.py:44
+msgid "description"
+msgstr "описание"
+
+#: blog/models.py:43
+msgid "main image"
+msgstr "основное изображение"
+
+#: blog/models.py:44 pages/models.py:8
+msgid "banner"
+msgstr "баннер"
+
+#: blog/models.py:45
+msgid "author"
+msgstr "автор"
+
+#: blog/models.py:46 product/models.py:25
+msgid "tags"
+msgstr "теги"
+
+#: blog/models.py:47 blog/models.py:71 pages/models.py:21 pages/models.py:38
+#: pages/models.py:57 product/models.py:7 product/models.py:18
+#: product/models.py:29 product/models.py:63
+msgid "created at"
+msgstr "создано в"
+
+#: blog/models.py:66
+msgid "post"
+msgstr "пост"
+
+#: blog/models.py:68 pages/models.py:20 pages/models.py:32 product/models.py:6
+#: product/models.py:17 product/models.py:28 product/models.py:39
+msgid "name"
+msgstr "имя"
+
+#: blog/models.py:69 customer/models.py:8 pages/models.py:33
+#: pages/models.py:108
+msgid "email"
+msgstr "Эл. адрес"
+
+#: blog/models.py:70
+msgid "comment"
+msgstr "комментарий"
+
+#: customer/models.py:6 pages/models.py:106
+msgid "date"
+msgstr "Дата"
+
+#: customer/models.py:7 pages/models.py:107
+msgid "full_name"
+msgstr "полное имя"
+
+#: customer/models.py:9 pages/models.py:109
+msgid "phone"
+msgstr "Телефон"
+
+#: customer/models.py:10 pages/models.py:35 pages/models.py:110
+msgid "message"
+msgstr "сообщение"
+
+#: customer/models.py:11 pages/models.py:53 pages/models.py:111
+msgid "is_active"
+msgstr "активен"
+
+#: customer/models.py:12 pages/models.py:79
+msgid "created_at"
+msgstr "создано в"
+
+#: pages/models.py:9 pages/models.py:78
+msgid "active"
+msgstr "активен"
+
+#: pages/models.py:15
+msgid "background"
+msgstr "фон"
+
+#: pages/models.py:16
+msgid "backgrounds"
+msgstr ""
+
+#: pages/models.py:34
+msgid "theme"
+msgstr "тема"
+
+#: pages/models.py:50
+msgid "city"
+msgstr "город"
+
+#: pages/models.py:51
+msgid "number"
+msgstr "номер"
+
+#: pages/models.py:52
+msgid "full_address"
+msgstr "полный адрес"
+
+#: pages/models.py:54
+msgid "img"
+msgstr "изображение"
+
+#: pages/models.py:69
+msgid "first_name"
+msgstr "имя"
+
+#: pages/models.py:70
+msgid "last_name"
+msgstr "Фамилия"
+
+#: pages/models.py:75
+msgid "position"
+msgstr "позиция"
+
+#: pages/models.py:80
+msgid "photo"
+msgstr "Фото"
+
+#: pages/models.py:81
+msgid "instagram"
+msgstr ""
+
+#: pages/models.py:82
+msgid "twitter"
+msgstr ""
+
+#: pages/models.py:83
+msgid "facebook"
+msgstr ""
+
+#: pages/models.py:94
+msgid "question"
+msgstr "вопрос"
+
+#: pages/models.py:95
+msgid "answer"
+msgstr "отвечать"
+
+#: product/models.py:13 product/models.py:51
+msgid "category"
+msgstr "категория"
+
+#: product/models.py:14
+msgid "categories"
+msgstr "категории"
+
+#: product/models.py:24 product/models.py:61
+msgid "tag"
+msgstr ""
+
+#: product/models.py:35 product/models.py:56
+msgid "ingredient"
+msgstr "составная часть"
+
+#: product/models.py:36
+msgid "ingredients"
+msgstr "составная часть"
+
+#: product/models.py:40
+msgid "image"
+msgstr "изображение"
+
+#: product/models.py:41
+msgid "price"
+msgstr "цена"
+
+#: product/models.py:42
+msgid "real_price"
+msgstr ""
+
+#: product/models.py:43
+msgid "discount"
+msgstr "скидка"
+
+#: product/models.py:45
+msgid "mass"
+msgstr "масса"
+
+#: product/models.py:66
+msgid "product"
+msgstr "продукт"
+
+#: product/models.py:67
+msgid "products"
+msgstr "продукты"
+
+#: templates/layouts/footer.html:19
+msgid "2020 Testo. All Rights Reserved"
+msgstr "2020 Тесто. Все права защищены"
+
+#: templates/layouts/footer.html:36
+msgid "Call Now"
+msgstr "Позвони сейчас"
+
+#: templates/layouts/navbar.html:50
+msgid "About"
+msgstr "О нас"
+
+#: templates/layouts/navbar.html:52 templates/main/about.html:41
+msgid "About Testo"
+msgstr "О Тесто"
+
+#: templates/layouts/navbar.html:53 templates/main/team.html:36
+msgid "Meet The Team"
+msgstr "Встретить команду"
+
+#: templates/layouts/navbar.html:54
+msgid "Images Gallery"
+msgstr "Галерея изображений"
+
+#: templates/layouts/navbar.html:55 templates/main/faqs.html:28
+#: templates/main/faqs.html:37
+msgid "F.A.Q.s"
+msgstr "Часто задаваемые вопросы"
+
+#: templates/layouts/navbar.html:56 templates/main/terms.html:29
+#: templates/main/terms.html:38
+msgid "Terms & Privacy"
+msgstr "Условия и конфиденциальность"
+
+#: templates/layouts/navbar.html:61
+msgid "Our Menu"
+msgstr "Наше меню"
+
+#: templates/layouts/navbar.html:80 templates/main/blog_detail.html:23
+msgid "Blog"
+msgstr "Блог"
+
+#: templates/layouts/navbar.html:85
+msgid "Contacts"
+msgstr "Контакты"
+
+#: templates/layouts/navbar.html:87
+msgid "Book A Table"
+msgstr "Заказать столик"
+
+#: templates/layouts/navbar.html:88 templates/main/location.html:37
+msgid "Our Locations"
+msgstr "Наши местоположения"
+
+#: templates/layouts/navbar.html:89 templates/main/contact.html:26
+#: templates/main/contact.html:36
+msgid "Contact Us"
+msgstr "Связаться с нами"
+
+#: templates/main/about.html:30 templates/main/blog.html:21
+#: templates/main/blog_detail.html:20 templates/main/booking.html:26
+#: templates/main/contact.html:25 templates/main/faqs.html:26
+#: templates/main/location.html:26 templates/main/menu1.html:26
+#: templates/main/team.html:26 templates/main/terms.html:28
+msgid "Home"
+msgstr "Главная "
+
+#: templates/main/about.html:32
+msgid "About Us"
+msgstr "О нас"
+
+#: templates/main/about.html:72 templates/main/home.html:67
+msgid "Nothing brings people together like a good burger"
+msgstr "Ничто так не сближает людей, как хороший бургер"
+
+#: templates/main/about.html:88
+msgid "Quaerat sodales sapien euismod purus blandit"
+msgstr "Пусть ищет членов мудрого Исполнения чистых квартир "
+
+#: templates/main/about.html:142 templates/main/home.html:89
+msgid "Burgers"
+msgstr "Бургеры"
+
+#: templates/main/about.html:155 templates/main/home.html:103
+msgid "Fries"
+msgstr "фри"
+
+#: templates/main/about.html:169 templates/main/home.html:117
+msgid "Chicken"
+msgstr "Курица"
+
+#: templates/main/about.html:182 templates/main/home.html:131
+msgid "Salads"
+msgstr "Салаты"
+
+#: templates/main/about.html:195
+msgid "Desserts"
+msgstr "Десерты"
+
+#: templates/main/about.html:208
+msgid "Drinks"
+msgstr "Напитки"
+
+#: templates/main/about.html:218
+msgid "Explore Full Menu"
+msgstr "Исследуйте полное меню"
+
+#: templates/main/about.html:344
+msgid "Events & Catering"
+msgstr "Мероприятия и питание"
+
+#: templates/main/blog.html:23
+msgid "Our Blog"
+msgstr "Наш блог"
+
+#: templates/main/blog.html:36
+msgid "Blog Listing"
+msgstr "Список блогов"
+
+#: templates/main/blog.html:92
+msgid "Latest Articles"
+msgstr "Последние статьи"
+
+#: templates/main/blog.html:141
+msgid "Most Read Articles"
+msgstr "Самые читаемые статьи"
+
+#: templates/main/blog_detail.html:24
+msgid "Blog Post"
+msgstr "Сообщение блога"
+
+#: templates/main/blog_detail.html:33
+msgid "Single Blog Post"
+msgstr "Один пост в блоге"
+
+#: templates/main/blog_detail.html:133
+msgid "Previous Post"
+msgstr "Предыдущий"
+
+#: templates/main/blog_detail.html:150
+msgid "Next Post"
+msgstr "Следующий"
+
+#: templates/main/blog_detail.html:178
+msgid "Comments"
+msgstr "Комментарии"
+
+#: templates/main/blog_detail.html:213
+msgid "Leave a Comment"
+msgstr "Оставить комментарий"
+
+#: templates/main/blog_detail.html:223
+msgid "Add Comment"
+msgstr "Добавить комментарий"
+
+#: templates/main/blog_detail.html:229
+msgid "Name"
+msgstr "Имя"
+
+#: templates/main/booking.html:27 templates/main/booking.html:97
+msgid "Booking"
+msgstr "Бронирование"
+
+#: templates/main/booking.html:36
+msgid "Reserve A Table"
+msgstr "Забронировать столик"
+
+#: templates/main/booking.html:58
+msgid "Fill in the form below or give us a call"
+msgstr "Заполните форму ниже или позвоните нам"
+
+#: templates/main/booking.html:122 templates/main/contact.html:203
+#: templates/main/team.html:147
+msgid "Download mobile App and"
+msgstr "Скачайте мобильное приложение и"
+
+#: templates/main/booking.html:123 templates/main/contact.html:204
+#: templates/main/team.html:148
+#, python-format
+msgid "save up to 20% "
+msgstr "сэкономьте до 20%"
+
+#: templates/main/contact.html:63
+msgid "Location"
+msgstr "Место нахождения"
+
+#: templates/main/contact.html:79 templates/main/contact.html:95
+msgid "Working Hours"
+msgstr "Рабочее время"
+
+#: templates/main/contact.html:82
+msgid "Mon-Fri"
+msgstr "пн-пт"
+
+#: templates/main/contact.html:83
+msgid "Saturday"
+msgstr "Суббота"
+
+#: templates/main/contact.html:84
+msgid "Sunday"
+msgstr "Воскресенье"
+
+#: templates/main/contact.html:134
+msgid "Get in Touch"
+msgstr "Связаться"
+
+#: templates/main/faqs.html:84
+msgid "Still Have A ?"
+msgstr "У вас есть другой вопрос?"
+
+#: templates/main/home.html:32
+msgid "Open Daily"
+msgstr "Открыто каждый день"
+
+#: templates/main/home.html:200
+msgid "Explore Our Menu"
+msgstr "Изучите наше меню"
+
+#: templates/main/location.html:27
+msgid "Locations"
+msgstr "Места"
+
+#: templates/main/location.html:69
+msgid "Phone"
+msgstr "Телефон"
+
+#: templates/main/location.html:72
+msgid "Address"
+msgstr "Адрес"
+
+#: templates/main/menu1.html:36
+msgid "Main Menu"
+msgstr "Главное меню"
+
+#: templates/main/team.html:27
+msgid "Our Team"
+msgstr "Наша команда"

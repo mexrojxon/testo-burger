@@ -1,5 +1,5 @@
 {% extends 'base.html'%}
-
+{% load i18n %}
 {% load static %}
 
 {% block content%}
@@ -25,8 +25,8 @@
 											<div class="breadcrumb-nav">
 												<nav aria-label="breadcrumb">
 												  	<ol class="breadcrumb">
-												    	<li class="breadcrumb-item"><a href="{% url 'pages:home' %}">Home</a></li>
-												    	<li class="breadcrumb-item active" aria-current="page">Terms & Privacy</li>
+												    	<li class="breadcrumb-item"><a href="{% url 'pages:home' %}">{% trans 'Home' %}</a></li>
+												    	<li class="breadcrumb-item active" aria-current="page">{% trans 'Terms & Privacy' %}</li>
 												  	</ol>
 												</nav>
 											</div>
@@ -35,7 +35,7 @@
 								</div>
 
 								<!-- Title -->
-								<h2 class="h2-xl">Terms & Privacy</h2>
+								<h2 class="h2-xl">{% trans 'Terms & Privacy' %}</h2>
 
 							</div>
 						</div>

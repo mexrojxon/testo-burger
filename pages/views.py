@@ -1,6 +1,7 @@
 from django.shortcuts import render, reverse
 from django.views.generic import *
 
+from product.models import ProductModel
 from .form import ContactModelForm
 from .models import HomeBannerModel, LocationModel, TeamModel, FAQsModel
 
@@ -11,6 +12,7 @@ class HomePageView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(HomePageView, self, **kwargs).get_context_data()
         context['banners'] = HomeBannerModel.objects.filter(is_active=True).order_by('-id')[:3]
+        context['foods'] = ProductModel.objects.all().order_by('-pk')[:8]
         return context
 
 

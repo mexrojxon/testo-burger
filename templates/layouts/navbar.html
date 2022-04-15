@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 
 
 <!-- PRELOADER SPINNER
@@ -46,18 +47,18 @@
                 <ul class="top-list">
 
                     <!-- DROPDOWN MENU -->
-                    <li><a href="#">About</a>
+                    <li><a href="#">{% trans 'About' %}</a>
                         <ul>
-                            <li><a href="{% url 'pages:about' %}">About Testo</a></li>
-                            <li><a href="{% url 'pages:team' %}">Meet The Team</a></li>
-                            <li><a href="gallery.html">Images Gallery</a></li>
-                            <li><a href="{% url 'pages:faqs' %}">F.A.Q.s</a></li>
-                            <li><a href="{% url 'pages:terms' %}">Terms & Privacy</a></li>
+                            <li><a href="{% url 'pages:about' %}">{% trans 'About Testo' %}</a></li>
+                            <li><a href="{% url 'pages:team' %}">{% trans 'Meet The Team' %}</a></li>
+                            <li><a href="gallery.html">{% trans 'Images Gallery'%}</a></li>
+                            <li><a href="{% url 'pages:faqs' %}">{% trans 'F.A.Q.s' %}</a></li>
+                            <li><a href="{% url 'pages:terms' %}">{% trans 'Terms & Privacy' %}</a></li>
                         </ul>
                     </li>
 
                     <!-- DROPDOWN MENU -->
-                    <li><a href="#">Our Menu</a>
+                    <li><a href="#">{% trans 'Our Menu' %}</a>
                         <ul>
                             <li><a href="menu-1.html">Menu v.1 - Tabs Cards</a></li>
                             <li><a href="{% url 'product:menu' %}">Menu v.2 - Cards</a></li>
@@ -76,16 +77,16 @@
                     </li>
 
                     <!-- DROPDOWN MENU -->
-                    <li><a href="{% url 'blog:blog_list' %}">Blog</a>
+                    <li><a href="{% url 'blog:blog_list' %}">{% trans 'Blog' %}</a>
 
                     </li>
-
+'
                     <!-- DROPDOWN MENU -->
-                    <li><a href="#">Contacts</a>
-                        <ul>
-                            <li><a href="{% url 'customer:booking' %}">Book A Table</a></li>
-                            <li><a href="{% url 'pages:location' %}">Our Locations</a></li>
-                            <li><a href="{% url 'pages:contact' %}">Contact Us</a></li>
+                    <li><a href="#">{% trans 'Contacts' %}</a>
+                        <ul>'
+                            <li><a href="{% url 'customer:booking' %}">{% trans 'Book A Table' %}</a></li>
+                            <li><a href="{% url 'pages:location' %}">{% trans 'Our Locations' %}</a></li>
+                            <li><a href="{% url 'pages:contact' %}">{% trans 'Contact Us' %}</a></li>
                         </ul>
                     </li>
 

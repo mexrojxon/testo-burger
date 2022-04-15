@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% load i18n %}
 {% block content %}
     <!-- PAGE CONTENT
 		============================================= -->
@@ -22,8 +22,8 @@
                                         <div class="breadcrumb-nav">
                                             <nav aria-label="breadcrumb">
                                                 <ol class="breadcrumb">
-                                                    <li class="breadcrumb-item"><a href="demo-1.html">Home</a></li>
-                                                    <li class="breadcrumb-item active" aria-current="page">Contact Us
+                                                    <li class="breadcrumb-item"><a href="{% url 'pages:home' %}">{% trans 'Home' %}</a></li>
+                                                    <li class="breadcrumb-item active" aria-current="page">{% trans 'Contact Us' %}
                                                     </li>
                                                 </ol>
                                             </nav>
@@ -33,7 +33,7 @@
                             </div>
 
                             <!-- Title -->
-                            <h2 class="h2-xl">Contact Us</h2>
+                            <h2 class="h2-xl">{% trans 'Contact Us'%}</h2>
 
                         </div>
                     </div>
@@ -60,7 +60,7 @@
                                 <div class="cbox-5">
 
                                     <!-- Title -->
-                                    <h5 class="h5-lg">Location</h5>
+                                    <h5 class="h5-lg">{% trans 'Location' %}</h5>
 
                                     <!-- Address -->
                                     <p class="p-md">8721 M Central Avenue,</p>
@@ -76,12 +76,12 @@
                                 <div class="cbox-5">
 
                                     <!-- Title -->
-                                    <h5 class="h5-lg">Working Hours</h5>
+                                    <h5 class="h5-lg">{% trans 'Working Hours' %}</h5>
 
                                     <!-- Text -->
-                                    <p class="p-md">Mon-Fri: 9:00AM - 10:00PM</p>
-                                    <p class="p-md">Saturday: 10:00AM - 8:30PM</p>
-                                    <p class="p-md">Sunday: 12:00PM - 5:00PM</p>
+                                    <p class="p-md">{% trans 'Mon-Fri' %}: 9:00AM - 10:00PM</p>
+                                    <p class="p-md">{% trans 'Saturday' %}: 10:00AM - 8:30PM</p>
+                                    <p class="p-md">{% trans 'Sunday' %}: 12:00PM - 5:00PM</p>
 
                                 </div>
                             </div>
@@ -92,7 +92,7 @@
                                 <div class="cbox-5">
 
                                     <!-- Title -->
-                                    <h5 class="h5-lg">Working Hours</h5>
+                                    <h5 class="h5-lg">{% trans 'Contacts' %}</h5>
 
                                     <!-- Title -->
                                     <p class="p-md">P: +12 3 3456 7890</p>
@@ -131,7 +131,7 @@
                         <div class="section-title mb-40 text-center">
 
                             <!-- Title 	-->
-                            <h2 class="h2-xl">Get in Touch</h2>
+                            <h2 class="h2-xl">{% trans 'Get in Touch' %}</h2>
 
                             <!-- Text -->
                             <p class="p-xl">Aliquam a augue suscipit, luctus neque purus ipsum neque undo dolor
@@ -200,8 +200,8 @@
                         <div class="banner-3-txt coffee-color">
 
                             <!-- Title  -->
-                            <h4 class="h4-xl">Download mobile App and</h4>
-                            <h2>save up to 20%</h2>
+                            <h4 class="h4-xl">{% trans 'Download mobile App and' %}</h4>
+                            <h2>{% trans 'save up to 20%' %}</h2>
 
                             <!-- Text -->
                             <p class="p-md">Aliquam a augue suscipit, luctus neque purus ipsum and neque dolor primis

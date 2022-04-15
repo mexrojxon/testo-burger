@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
 {% load static %}
 
@@ -16,11 +17,11 @@
                                     <div class="breadcrumb-nav">
                                         <nav aria-label="breadcrumb">
                                             <ol class="breadcrumb">
-                                                <li class="breadcrumb-item"><a href="{% url 'pages:home' %}">Home</a>
+                                                <li class="breadcrumb-item"><a href="{% url 'pages:home' %}">{% trans 'Home' %}</a>
                                                 </li>
                                                 <li class="breadcrumb-item"><a
-                                                        href="{% url 'blog:blog_list' %}">Blog</a></li>
-                                                <li class="breadcrumb-item active" aria-current="page">Blog Post</li>
+                                                        href="{% url 'blog:blog_list' %}">{% trans 'Blog' %}</a></li>
+                                                <li class="breadcrumb-item active" aria-current="page">{% trans 'Blog Post' %}</li>
                                             </ol>
                                         </nav>
                                     </div>
@@ -29,7 +30,7 @@
                         </div>
 
                         <!-- Title -->
-                        <h2 class="h2-xl">Single Blog Post</h2>
+                        <h2 class="h2-xl">{% trans 'Single Blog Post' %}</h2>
 
                     </div>
                 </div>
@@ -129,7 +130,7 @@
                         <div class="col-md-5">
                             {% if post.get_previous_by_created_at %}
                                 <div class="prev-post mb-30">
-                                    <h6 class="h6-xl">Previous Post</h6>
+                                    <h6 class="h6-xl">{% trans 'Previous Post' %}</h6>
                                     <a href="{% url 'blogs:blog_detail' pk=post.get_previous_by_created_at.id %}">{{ post.get_previous_by_created_at.title }}</a>
                                 </div>
                             {% endif %}
@@ -146,7 +147,7 @@
                         <div class="col-md-5 text-right">
                             {% if post.get_next_by_created_at %}
                                 <div class="next-post mb-30">
-                                    <h6 class="h6-xl">Next Post</h6>
+                                    <h6 class="h6-xl">{% trans 'Next Post' %}</h6>
                                     <a href="{% url 'blogs:blog_detail' pk=post.get_next_by_created_at.id %}">{{ post.get_next_by_created_at.title }}</a>
                                 </div>
                             {% endif %}
@@ -174,7 +175,7 @@
 
                         <!-- Title -->
                         {% if post.comments.all %}
-                            <h5 class="h5-lg">{{ post.comments.all.count }} Comments</h5>
+                            <h5 class="h5-lg">{{ post.comments.all.count }} {% trans 'Comments' %}</h5>
                         {% endif %}
 
 
@@ -209,7 +210,7 @@
                         <div id="">
 
                             <!-- Title -->
-                            <h5 class="h5-lg">Leave a Comment</h5>
+                            <h5 class="h5-lg">{% trans 'Leave a Comment' %}</h5>
 
                             <!-- Text -->
                             <p class="p-sm grey-color">Your email address will not be published. Required fields are
@@ -219,13 +220,13 @@
                                   class="row comment-form">
                                 {% csrf_token %}
                                 <div class="col-md-12 input-message">
-                                    <p>Add Comment *</p>
+                                    <p>{% trans 'Add Comment' %} *</p>
                                     <textarea class="form-control " name="comment" rows="6"
                                               placeholder="Enter Your Comment Here* ..." required></textarea>
                                 </div>
 
                                 <div class="col-md-12">
-                                    <p>Name*</p>
+                                    <p>{% trans 'Name' %}*</p>
                                     <input type="text" name="name" class="form-control"
                                            placeholder="Enter Your Name*" required>
                                 </div>

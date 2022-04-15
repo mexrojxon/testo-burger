@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block content %}
     <!-- PAGE HERO
@@ -17,9 +18,9 @@
                                     <div class="breadcrumb-nav">
                                         <nav aria-label="breadcrumb">
                                             <ol class="breadcrumb">
-                                                <li class="breadcrumb-item"><a href="{% url 'pages:home' %}">Home</a>
+                                                <li class="breadcrumb-item"><a href="{% url 'pages:home' %}">{% trans 'Home' %}</a>
                                                 </li>
-                                                <li class="breadcrumb-item active" aria-current="page">Our Blog</li>
+                                                <li class="breadcrumb-item active" aria-current="page">{% trans 'Our Blog' %}</li>
                                             </ol>
                                         </nav>
                                     </div>
@@ -32,7 +33,7 @@
                             {% if request.GET.tag %}
                                 #{{ request.GET.tag }}
                             {% else %}
-                                Blog Listing
+                                {% trans 'Blog Listing' %}
                             {% endif %}
                         </h2>
 
@@ -88,7 +89,7 @@
 
 
                     <!-- BLOG POSTS CATEGORY -->
-                    <h5 class="h5-xl posts-category">Latest Articles</h5>
+                    <h5 class="h5-xl posts-category">{% trans 'Latest Articles' %}</h5>
 
 
                     <!-- BLOG POSTS HOLDER -->
@@ -137,7 +138,7 @@
 
 
                     <!-- BLOG POSTS CATEGORY -->
-                    <h5 class="h5-xl posts-category">Most Read Articles</h5>
+                    <h5 class="h5-xl posts-category">{% trans 'Most Read Articles' %}</h5>
 
                     {% for most in most %}
                         <!-- BLOG POST #5 -->

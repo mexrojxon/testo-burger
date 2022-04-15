@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% load i18n %}
 {% block content %}
     <!-- PAGE CONTENT
 ============================================= -->
@@ -22,8 +22,10 @@
                                         <div class="breadcrumb-nav">
                                             <nav aria-label="breadcrumb">
                                                 <ol class="breadcrumb">
-                                                    <li class="breadcrumb-item"><a href="demo-1.html">Home</a></li>
-                                                    <li class="breadcrumb-item active" aria-current="page">F.A.Q.s</li>
+                                                    <li class="breadcrumb-item"><a
+                                                            href="{% url 'pages:home' %}">{% trans "Home" %}</a></li>
+                                                    <li class="breadcrumb-item active"
+                                                        aria-current="page">{% trans 'F.A.Q.s' %}</li>
                                                 </ol>
                                             </nav>
                                         </div>
@@ -32,7 +34,7 @@
                             </div>
 
                             <!-- Title -->
-                            <h2 class="h2-xl">F.A.Q.s</h2>
+                            <h2 class="h2-xl">{% trans 'F.A.Q.s' %}</h2>
 
                         </div>
                     </div>
@@ -78,8 +80,9 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="more-questions-btn text-center">
-                            <a href="{% url 'pages:contact' %}" class="btn btn-md btn-red tra-red-hover">Still Have A
-                                Question?</a>
+                            <a href="{% url 'pages:contact' %}"
+                               class="btn btn-md btn-red tra-red-hover">{% trans 'Still Have A ?' %}
+                                </a>
                         </div>
                     </div>
                 </div>

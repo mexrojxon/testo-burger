@@ -5,7 +5,7 @@ from django.utils.translation import gettext_lazy as _
 class HomeBannerModel(models.Model):
     title = models.TextField(verbose_name=_('title'))
     description = models.TextField(verbose_name=_('description'))
-    background = models.ImageField(upload_to='banner', verbose_name=_('banner'))
+    background = models.ImageField(upload_to='banner/', verbose_name=_('banner'))
     is_active = models.BooleanField(verbose_name=_('active'), default=True)
 
     def __str__(self):
@@ -51,7 +51,7 @@ class LocationModel(models.Model):
     number = models.CharField(max_length=20, verbose_name=_('number'))
     full_address = models.CharField(max_length=255, verbose_name=_('full_address'))
     is_active = models.BooleanField(default=True, verbose_name=_('is_active'))
-    img = models.ImageField(verbose_name=_('img'))
+    img = models.ImageField(upload_to='filial/', verbose_name=_('img'))
     created_at = models.DateTimeField(
         auto_now_add=True,
         verbose_name=_('created at')
@@ -77,7 +77,7 @@ class TeamModel(models.Model):
     )
     is_active = models.BooleanField(default=True, verbose_name=_('active'))
     created_at = models.DateTimeField(auto_now_add=True, verbose_name=_('created_at'))
-    photo = models.ImageField(verbose_name=_('photo'))
+    photo = models.ImageField(upload_to='team/',verbose_name=_('photo'))
     instagram_link = models.CharField(max_length=50, verbose_name=_('instagram'), null=True,blank=True)
     twitter_link = models.CharField(max_length=50, verbose_name=_('twitter'), null=True, blank=True)
     facebook_link = models.CharField(max_length=50, verbose_name=_('facebook'), null=True, blank=True)
@@ -107,5 +107,5 @@ class BookingModel(models.Model):
     full_name = models.CharField(max_length=50, verbose_name=_('full_name'))
     email = models.EmailField(verbose_name=_('email'))
     phone = models.CharField(max_length=20, verbose_name=_('phone'))
-    messege = models.TextField(verbose_name=_('messege'))
+    message = models.TextField(verbose_name=_('message'))
     is_active = models.BooleanField(default=True, verbose_name=_('is_active'))

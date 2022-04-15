@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
+
+
 
 {% block content %}
-
-
-
     <!-- PAGE CONTENT
     ============================================= -->
     <div id="page" class="page">
@@ -29,7 +29,8 @@
                                                 <!-- Title -->
                                                 <div class="title"><h2>{{ banner.title }}</h2></div>
                                                 <!-- Text -->
-                                                <p>Open Daily: <span class="yellow-color">11:30PM - 8:30PM</span></p>
+                                                <p>{% trans 'Open Daily' %}: <span
+                                                        class="yellow-color">11:30PM - 8:30PM</span></p>
                                             </div>
                                         </div>
                                     </div>  <!-- End row -->
@@ -64,7 +65,7 @@
                         <div class="about-3-txt mb-40">
 
                             <!-- Title -->
-                            <h2 class="h2-sm coffee-color">Nothing brings people together like a good burger</h2>
+                            <h2 class="h2-sm coffee-color">{% trans 'Nothing brings people together like a good burger' %}</h2>
 
                             <!-- Text -->
                             <p class="p-md grey-color">Porta semper lacus cursus, feugiat primis ultrice a ligula risus
@@ -86,7 +87,7 @@
                                             </div>
 
                                             <!-- Text -->
-                                            <h6 class="h6-lg">Burgers</h6>
+                                            <h6 class="h6-lg">{% trans 'Burgers' %}</h6>
 
                                         </div>
                                     </div>
@@ -100,7 +101,7 @@
                                                     class="flaticon-french-fries"></span></div>
 
                                             <!-- Text -->
-                                            <h6 class="h6-lg">Fries</h6>
+                                            <h6 class="h6-lg">{% trans 'Fries' %}</h6>
 
                                         </div>
                                     </div>
@@ -114,7 +115,7 @@
                                                     class="flaticon-fried-chicken"></span></div>
 
                                             <!-- Text -->
-                                            <h6 class="h6-lg">Chicken</h6>
+                                            <h6 class="h6-lg">{% trans 'Chicken' %}</h6>
 
                                         </div>
                                     </div>
@@ -128,7 +129,7 @@
                                             </div>
 
                                             <!-- Text -->
-                                            <h6 class="h6-lg">Salads</h6>
+                                            <h6 class="h6-lg">{% trans 'Salads' %}</h6>
 
                                         </div>
                                     </div>
@@ -197,11 +198,10 @@
                         <div class="section-title mb-60 text-center">
 
                             <!-- Title 	-->
-                            <h2 class="h2-xl red-color">Explore Our Menu</h2>
+                            <h2 class="h2-xl red-color">{% trans 'Explore Our Menu' %}</h2>
 
                             <!-- Text -->
-                            <p class="p-xl">Aliquam a augue suscipit, luctus neque purus ipsum neque undo dolor
-                                primis libero tempus, blandit a cursus varius magna
+                            <p class="p-xl">{% trans 'Aliquam a augue suscipit, luctus neque purus ipsum neque undo dolor primis libero tempus, blandit a cursus varius magna' %}
                             </p>
 
                         </div>
@@ -211,543 +211,76 @@
 
                 <div class="row">
 
+                    {% for items in foods|slice:4 %}
+                        <!-- MENU ITEM #1 -->
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="menu-6-item bg-white">
 
-                    <!-- MENU ITEM #1 -->
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="menu-6-item bg-white">
+                                <!-- IMAGE -->
+                                <div class="menu-6-img rel">
+                                    <div class="hover-overlay">
 
-                            <!-- IMAGE -->
-                            <div class="menu-6-img rel">
-                                <div class="hover-overlay">
+                                        <!-- Image -->
+                                        <img class="img-fluid" src="{{ items.image.url }} "
+                                             alt="menu-image"/>
 
-                                    <!-- Image -->
-                                    <img class="img-fluid" src="{% static 'images/menu/burger-11.jpg' %} "
-                                         alt="menu-image"/>
+                                        <!-- Item Code -->
+                                        <span class="item-code bg-tra-dark">Code: {{ items.id }}</span>
 
-                                    <!-- Item Code -->
-                                    <span class="item-code bg-tra-dark">Code: 0850</span>
+                                        <!-- Zoom Icon -->
+                                        <div class="menu-img-zoom ico-25">
+                                            <a href="{{ items.image.url }}" class="image-link">
+                                                <span class="flaticon-zoom"></span>
+                                            </a>
+                                        </div>
 
-                                    <!-- Zoom Icon -->
-                                    <div class="menu-img-zoom ico-25">
-                                        <a href="{% static 'images/menu/burger-11.jpg' %} " class="image-link">
-                                            <span class="flaticon-zoom"></span>
-                                        </a>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <!-- TEXT -->
-                            <div class="menu-6-txt rel">
-
-                                <!-- Rating -->
-                                <div class="item-rating">
-                                    <div class="stars-rating stars-lg">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star-half-alt"></i>
                                     </div>
                                 </div>
 
-                                <!-- Like Icon -->
-                                <div class="like-ico ico-25">
-                                    <a href="#"><span class="flaticon-heart"></span></a>
-                                </div>
+                                <!-- TEXT -->
+                                <div class="menu-6-txt rel">
 
-                                <!-- Title -->
-                                <h5 class="h5-sm coffee-color">Crispy Chicken</h5>
+                                    <!-- Rating -->
+                                    <div class="item-rating">
+                                        <div class="stars-rating stars-lg">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                        </div>
+                                    </div>
 
-                                <!-- Description -->
-                                <p class="grey-color">Chicken breast, chilli sauce, tomatoes, pickles, coleslaw</p>
+                                    <!-- Like Icon -->
+                                    <div class="like-ico ico-25">
+                                        <a href="#"><span class="flaticon-heart"></span></a>
+                                    </div>
 
-                                <!-- Price -->
-                                <div class="menu-6-price bg-coffee">
-                                    <h5 class="h5-xs yellow-color">$8.50</h5>
-                                </div>
+                                    <!-- Title -->
+                                    <h5 class="h5-sm coffee-color">{{ items.name }}</h5>
 
-                                <!-- Add To Cart -->
-                                <div class="add-to-cart bg-yellow ico-10">
-                                    <a href="product-single.html"><span class="flaticon-shopping-bag"></span> Add to
-                                        Cart</a>
-                                </div>
+                                    <!-- Description -->
+                                    {% for ingredient in items.ingredient.all %}
+                                        <span class="grey-color">{{ ingredient }},</span>
+                                    {% endfor %}
+                                    <br><br>
 
-                            </div>
+                                    <!-- Price -->
+                                    <div class="menu-6-price bg-coffee">
+                                        <h5 class="h5-xs yellow-color">${{ items.price }}</h5>
+                                    </div>
 
-                        </div>
-                    </div>    <!-- END MENU ITEM #1 -->
-
-
-                    <!-- MENU ITEM #2 -->
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="menu-6-item bg-white">
-
-                            <!-- IMAGE -->
-                            <div class="menu-6-img rel">
-                                <div class="hover-overlay">
-
-                                    <!-- Image -->
-                                    <img class="img-fluid" src="{% static 'images/menu/burger-12.jpg' %} "
-                                         alt="menu-image"/>
-
-                                    <!-- Item Code -->
-                                    <span class="item-code bg-tra-dark">Code: 0858</span>
-
-                                    <!-- Zoom Icon -->
-                                    <div class="menu-img-zoom ico-25">
-                                        <a href="{% static 'images/menu/burger-12.jpg' %} " class="image-link">
-                                            <span class="flaticon-zoom"></span>
-                                        </a>
+                                    <!-- Add To Cart -->
+                                    <div class="add-to-cart bg-yellow ico-10">
+                                        <a href="product-single.html"><span
+                                                class="flaticon-shopping-bag"></span>{% trans ' Add to Cart' %}</a>
                                     </div>
 
                                 </div>
-                            </div>
-
-                            <!-- TEXT -->
-                            <div class="menu-6-txt rel">
-
-                                <!-- Rating -->
-                                <div class="item-rating">
-                                    <div class="stars-rating stars-lg">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                    </div>
-                                </div>
-
-                                <!-- Like Icon -->
-                                <div class="like-ico ico-25">
-                                    <a href="#"><span class="flaticon-heart"></span></a>
-                                </div>
-
-                                <!-- Title -->
-                                <h5 class="h5-sm coffee-color">Ultimate Bacon</h5>
-
-                                <!-- Description -->
-                                <p class="grey-color">House beef patty, cheddar cheese, bacon, onion, mustard</p>
-
-                                <!-- Price -->
-                                <div class="menu-6-price bg-coffee">
-                                    <h5 class="h5-xs yellow-color">$9.99</h5>
-                                </div>
-
-                                <!-- Add To Cart -->
-                                <div class="add-to-cart bg-yellow ico-10">
-                                    <a href="product-single.html"><span class="flaticon-shopping-bag"></span> Add to
-                                        Cart</a>
-                                </div>
 
                             </div>
-
-                        </div>
-                    </div>    <!-- END MENU ITEM #2 -->
-
-
-                    <!-- MENU ITEM #3 -->
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="menu-6-item bg-white">
-
-                            <!-- IMAGE -->
-                            <div class="menu-6-img rel">
-                                <div class="hover-overlay">
-
-                                    <!-- Image -->
-                                    <img class="img-fluid" src="{% static 'images/menu/burger-13.jpg' %} "
-                                         alt="menu-image"/>
-
-                                    <!-- Item Code -->
-                                    <span class="item-code bg-tra-dark">Code: 0847</span>
-
-                                    <!-- Zoom Icon -->
-                                    <div class="menu-img-zoom ico-25">
-                                        <a href="{% static 'images/menu/burger-13.jpg' %} " class="image-link">
-                                            <span class="flaticon-zoom"></span>
-                                        </a>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <!-- TEXT -->
-                            <div class="menu-6-txt rel">
-
-                                <!-- Rating -->
-                                <div class="item-rating">
-                                    <div class="stars-rating stars-lg">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                </div>
-
-                                <!-- Like Icon -->
-                                <div class="like-ico ico-25">
-                                    <a href="#"><span class="flaticon-heart"></span></a>
-                                </div>
-
-                                <!-- Title -->
-                                <h5 class="h5-sm coffee-color">Black Sheep</h5>
-
-                                <!-- Description -->
-                                <p class="grey-color">American cheese, tomato relish, avocado, lettuce, red onion</p>
-
-                                <!-- Price -->
-                                <div class="menu-6-price bg-coffee">
-                                    <h5 class="h5-xs yellow-color">$9.75</h5>
-                                </div>
-
-                                <!-- Add To Cart -->
-                                <div class="add-to-cart bg-yellow ico-10">
-                                    <a href="product-single.html"><span class="flaticon-shopping-bag"></span> Add to
-                                        Cart</a>
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>    <!-- END MENU ITEM #3 -->
-
-
-                    <!-- MENU ITEM #4 -->
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="menu-6-item bg-white">
-
-                            <!-- IMAGE -->
-                            <div class="menu-6-img rel">
-                                <div class="hover-overlay">
-
-                                    <!-- Image -->
-                                    <img class="img-fluid" src="{% static 'images/menu/burger-14.jpg' %} "
-                                         alt="menu-image"/>
-
-                                    <!-- Item Code -->
-                                    <span class="item-code bg-tra-dark">Code: 0859</span>
-
-                                    <!-- Zoom Icon -->
-                                    <div class="menu-img-zoom ico-25">
-                                        <a href="{% static 'images/menu/burger-14.jpg' %} " class="image-link">
-                                            <span class="flaticon-zoom"></span>
-                                        </a>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <!-- TEXT -->
-                            <div class="menu-6-txt rel">
-
-                                <!-- Rating -->
-                                <div class="item-rating">
-                                    <div class="stars-rating stars-lg">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star-half-alt"></i>
-                                    </div>
-                                </div>
-
-                                <!-- Like Icon -->
-                                <div class="like-ico ico-25">
-                                    <a href="#"><span class="flaticon-heart"></span></a>
-                                </div>
-
-                                <!-- Title -->
-                                <h5 class="h5-sm coffee-color">Double Burger</h5>
-
-                                <!-- Description -->
-                                <p class="grey-color">2 beef patties, cheddar cheese, mustard, pickles, tomatoes</p>
-
-                                <!-- Price -->
-                                <div class="menu-6-price bg-coffee">
-                                    <h5 class="h5-xs yellow-color">$10.35</h5>
-                                </div>
-
-                                <!-- Add To Cart -->
-                                <div class="add-to-cart bg-yellow ico-10">
-                                    <a href="product-single.html"><span class="flaticon-shopping-bag"></span> Add to
-                                        Cart</a>
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>    <!-- END MENU ITEM #4 -->
-
-
-                    <!-- MENU ITEM #5 -->
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="menu-6-item bg-white">
-
-                            <!-- IMAGE -->
-                            <div class="menu-6-img rel">
-                                <div class="hover-overlay">
-
-                                    <!-- Image -->
-                                    <img class="img-fluid" src="{% static 'images/menu/burger-15.jpg' %} "
-                                         alt="menu-image"/>
-
-                                    <!-- Item Code -->
-                                    <span class="item-code bg-tra-dark">Code: 0861</span>
-
-                                    <!-- Zoom Icon -->
-                                    <div class="menu-img-zoom ico-25">
-                                        <a href="{% static 'images/menu/burger-15.jpg' %} " class="image-link">
-                                            <span class="flaticon-zoom"></span>
-                                        </a>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <!-- TEXT -->
-                            <div class="menu-6-txt rel">
-
-                                <!-- Rating -->
-                                <div class="item-rating">
-                                    <div class="stars-rating stars-lg">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star-half-alt"></i>
-                                    </div>
-                                </div>
-
-                                <!-- Like Icon -->
-                                <div class="like-ico ico-25">
-                                    <a href="#"><span class="flaticon-heart"></span></a>
-                                </div>
-
-                                <!-- Title -->
-                                <h5 class="h5-sm coffee-color">Turkey Burger</h5>
-
-                                <!-- Description -->
-                                <p class="grey-color">Turkey, cheddar cheese, onion, lettuce, tomatoes, pickles</p>
-
-                                <!-- Price -->
-                                <div class="menu-6-price bg-coffee">
-                                    <h5 class="h5-xs yellow-color">$8.95</h5>
-                                </div>
-
-                                <!-- Add To Cart -->
-                                <div class="add-to-cart bg-yellow ico-10">
-                                    <a href="product-single.html"><span class="flaticon-shopping-bag"></span> Add to
-                                        Cart</a>
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>    <!-- END MENU ITEM #5 -->
-
-
-                    <!-- MENU ITEM #6 -->
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="menu-6-item bg-white">
-
-                            <!-- IMAGE -->
-                            <div class="menu-6-img rel">
-                                <div class="hover-overlay">
-
-                                    <!-- Image -->
-                                    <img class="img-fluid" src="{% static 'images/menu/burger-16.jpg' %} "
-                                         alt="menu-image"/>
-
-                                    <!-- Item Code -->
-                                    <span class="item-code bg-tra-dark">Code: 0840</span>
-
-                                    <!-- Zoom Icon -->
-                                    <div class="menu-img-zoom ico-25">
-                                        <a href="{% static 'images/menu/burger-16.jpg' %} " class="image-link">
-                                            <span class="flaticon-zoom"></span>
-                                        </a>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <!-- TEXT -->
-                            <div class="menu-6-txt rel">
-
-                                <!-- Rating -->
-                                <div class="item-rating">
-                                    <div class="stars-rating stars-lg">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                    </div>
-                                </div>
-
-                                <!-- Like Icon -->
-                                <div class="like-ico ico-25">
-                                    <a href="#"><span class="flaticon-heart"></span></a>
-                                </div>
-
-                                <!-- Title -->
-                                <h5 class="h5-sm coffee-color">Smokey House</h5>
-
-                                <!-- Description -->
-                                <p class="grey-color">Beef patty, cheddar cheese, onion, lettuce, tomatoes, pickles</p>
-
-                                <!-- Price -->
-                                <div class="menu-6-price bg-coffee">
-                                    <h5 class="h5-xs yellow-color">$9.50</h5>
-                                </div>
-
-                                <!-- Add To Cart -->
-                                <div class="add-to-cart bg-yellow ico-10">
-                                    <a href="product-single.html"><span class="flaticon-shopping-bag"></span> Add to
-                                        Cart</a>
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>    <!-- END MENU ITEM #6 -->
-
-
-                    <!-- MENU ITEM #7 -->
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="menu-6-item bg-white">
-
-                            <!-- IMAGE -->
-                            <div class="menu-6-img rel">
-                                <div class="hover-overlay">
-
-                                    <!-- Image -->
-                                    <img class="img-fluid" src="{% static 'images/menu/burger-17.jpg' %} "
-                                         alt="menu-image"/>
-
-                                    <!-- Item Code -->
-                                    <span class="item-code bg-tra-dark">Code: 0862</span>
-
-                                    <!-- Zoom Icon -->
-                                    <div class="menu-img-zoom ico-25">
-                                        <a href="{% static 'images/menu/burger-17.jpg' %} " class="image-link">
-                                            <span class="flaticon-zoom"></span>
-                                        </a>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <!-- TEXT -->
-                            <div class="menu-6-txt rel">
-
-                                <!-- Rating -->
-                                <div class="item-rating">
-                                    <div class="stars-rating stars-lg">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                </div>
-
-                                <!-- Like Icon -->
-                                <div class="like-ico ico-25">
-                                    <a href="#"><span class="flaticon-heart"></span></a>
-                                </div>
-
-                                <!-- Title -->
-                                <h5 class="h5-sm coffee-color">Classic Burger</h5>
-
-                                <!-- Description -->
-                                <p class="grey-color">Beef, cheddar cheese, ketchup, mustard, pickles, onion</p>
-
-                                <!-- Price -->
-                                <div class="menu-6-price bg-coffee">
-                                    <h5 class="h5-xs yellow-color">$7.95</h5>
-                                </div>
-
-                                <!-- Add To Cart -->
-                                <div class="add-to-cart bg-yellow ico-10">
-                                    <a href="product-single.html"><span class="flaticon-shopping-bag"></span> Add to
-                                        Cart</a>
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>    <!-- END MENU ITEM #7 -->
-
-
-                    <!-- MENU ITEM #8 -->
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="menu-6-item bg-white">
-
-                            <!-- IMAGE -->
-                            <div class="menu-6-img rel">
-                                <div class="hover-overlay">
-
-                                    <!-- Image -->
-                                    <img class="img-fluid" src="{% static 'images/menu/burger-18.jpg' %} "
-                                         alt="menu-image"/>
-
-                                    <!-- Item Code -->
-                                    <span class="item-code bg-tra-dark">Code: 0844</span>
-
-                                    <!-- Zoom Icon -->
-                                    <div class="menu-img-zoom ico-25">
-                                        <a href="{% static 'images/menu/burger-18.jpg' %} " class="image-link">
-                                            <span class="flaticon-zoom"></span>
-                                        </a>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <!-- TEXT -->
-                            <div class="menu-6-txt rel">
-
-                                <!-- Rating -->
-                                <div class="item-rating">
-                                    <div class="stars-rating stars-lg">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                    </div>
-                                </div>
-
-                                <!-- Like Icon -->
-                                <div class="like-ico ico-25">
-                                    <a href="#"><span class="flaticon-heart"></span></a>
-                                </div>
-
-                                <!-- Title -->
-                                <h5 class="h5-sm coffee-color">Vegan Burger</h5>
-
-                                <!-- Description -->
-                                <p class="grey-color">Mushroom patty, vegan cheese, lettuce, tomatoes, avocado</p>
-
-                                <!-- Price -->
-                                <div class="menu-6-price bg-coffee">
-                                    <h5 class="h5-xs yellow-color">$8.95</h5>
-                                </div>
-
-                                <!-- Add To Cart -->
-                                <div class="add-to-cart bg-yellow ico-10">
-                                    <a href="product-single.html"><span class="flaticon-shopping-bag"></span> Add to
-                                        Cart</a>
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>    <!-- END MENU ITEM #8 -->
-
-
+                        </div>    <!-- END MENU ITEM #1 -->
+                    {% endfor %}
                 </div>      <!-- End row -->
             </div>       <!-- End container -->
         </section>    <!-- END MENU-6 -->

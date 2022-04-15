@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{%  load i18n %}
 {% block content %}
 
     <!-- PAGE CONTENT
@@ -23,8 +23,8 @@
                                         <div class="breadcrumb-nav">
                                             <nav aria-label="breadcrumb">
                                                 <ol class="breadcrumb">
-                                                    <li class="breadcrumb-item"><a href="{% url 'pages:home' %}">Home</a></li>
-                                                    <li class="breadcrumb-item active" aria-current="page">Booking</li>
+                                                    <li class="breadcrumb-item"><a href="{% url 'pages:home' %}">{%  trans 'Home' %}</a></li>
+                                                    <li class="breadcrumb-item active" aria-current="page">{% trans 'Booking' %}</li>
                                                 </ol>
                                             </nav>
                                         </div>
@@ -33,7 +33,7 @@
                             </div>
 
                             <!-- Title -->
-                            <h2 class="h2-xl">Reserve A Table</h2>
+                            <h2 class="h2-xl">{% trans 'Reserve A Table' %}</h2>
 
                         </div>
                     </div>
@@ -55,7 +55,7 @@
 
                             <!-- Text -->
                             <p class="p-xl text-center">
-                                Fill in the form below or give us a call <a href="tel:123456789">789-654-3210</a>
+                                {% trans 'Fill in the form below or give us a call' %} <a href="tel:123456789">789-654-3210</a>
                             </p>
 
                             <!-- Form -->
@@ -94,7 +94,7 @@
                                 <!-- Form Button -->
                                 <div class="col-md-12 mt-10">
                                     <button type="submit" class="btn btn-md btn-red tra-red-hover submit">Request
-                                        Booking
+                                        {% trans 'Booking' %}
                                     </button>
                                 </div>
                             </form>    <!-- End Form -->
@@ -119,8 +119,8 @@
                         <div class="banner-3-txt coffee-color">
 
                             <!-- Title  -->
-                            <h4 class="h4-xl">Download mobile App and</h4>
-                            <h2>save up to 20%</h2>
+                            <h4 class="h4-xl">{% trans 'Download mobile App and' %}</h4>
+                            <h2>{% trans 'save up to 20%' %}</h2>
 
                             <!-- Text -->
                             <p class="p-md">Aliquam a augue suscipit, luctus neque purus ipsum and neque dolor primis

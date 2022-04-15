@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% load i18n %}
 {% block content %}
     <!-- PAGE CONTENT
 ============================================= -->
@@ -23,8 +23,8 @@
                                             <nav aria-label="breadcrumb">
                                                 <ol class="breadcrumb">
                                                     <li class="breadcrumb-item"><a
-                                                            href="{% url 'pages:home' %}">Home</a></li>
-                                                    <li class="breadcrumb-item active" aria-current="page">Our Team</li>
+                                                            href="{% url 'pages:home' %}">{% trans "Home" %}</a></li>
+                                                    <li class="breadcrumb-item active" aria-current="page">{% trans 'Our Team' %}</li>
                                                 </ol>
                                             </nav>
                                         </div>
@@ -33,7 +33,7 @@
                             </div>
 
                             <!-- Title -->
-                            <h2 class="h2-xl">Meet The Team</h2>
+                            <h2 class="h2-xl">{% trans 'Meet The Team' %}</h2>
 
                         </div>
                     </div>
@@ -144,8 +144,8 @@
                         <div class="banner-3-txt coffee-color">
 
                             <!-- Title  -->
-                            <h4 class="h4-xl">Download mobile App and</h4>
-                            <h2>save up to 20%</h2>
+                            <h4 class="h4-xl">{% trans 'Download mobile App and' %}</h4>
+                            <h2>{% trans 'save up to 20%' %}</h2>
 
                             <!-- Text -->
                             <p class="p-md">Aliquam a augue suscipit, luctus neque purus ipsum and neque dolor primis
