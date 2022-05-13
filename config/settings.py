@@ -6,7 +6,7 @@ SECRET_KEY = config('SECRET_KEY')
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [' https://d992-82-215-98-68.ngrok.io', '*']
 
 
 # Application definition
@@ -104,9 +104,9 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = 'en-us'
 
 LANGUAGES =(
-    ('en', 'English'),
-    ('uz', 'Uzbek'),
-    ('ru', 'Russian')
+    ('en', '🇺🇸 ENG'),
+    ('uz', '🇺🇿 UZB'),
+    ('ru', '🇷🇺 RUS')
 )
 
 LOCALE_PATHS = BASE_DIR / 'locale',

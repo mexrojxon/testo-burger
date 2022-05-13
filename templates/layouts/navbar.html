@@ -29,7 +29,8 @@
 
 
             <!-- LOGO IMAGE -->
-            <div class="logo" data-mobile-logo="{% static 'images/logo-01.png' %}" data-sticky-logo="{% static 'images/logo-01.png' %}">
+            <div class="logo" data-mobile-logo="{% static 'images/logo-01.png' %}"
+                 data-sticky-logo="{% static 'images/logo-01.png' %}">
                 <a href="{% url 'pages:home' %}"><img src="{% static 'images/logo-01.png' %}" alt="header-logo"/></a>
             </div>
 
@@ -51,7 +52,7 @@
                         <ul>
                             <li><a href="{% url 'pages:about' %}">{% trans 'About Testo' %}</a></li>
                             <li><a href="{% url 'pages:team' %}">{% trans 'Meet The Team' %}</a></li>
-                            <li><a href="gallery.html">{% trans 'Images Gallery'%}</a></li>
+                            <li><a href="gallery.html">{% trans 'Images Gallery' %}</a></li>
                             <li><a href="{% url 'pages:faqs' %}">{% trans 'F.A.Q.s' %}</a></li>
                             <li><a href="{% url 'pages:terms' %}">{% trans 'Terms & Privacy' %}</a></li>
                         </ul>
@@ -80,13 +81,28 @@
                     <li><a href="{% url 'blog:blog_list' %}">{% trans 'Blog' %}</a>
 
                     </li>
-'
+                    '
                     <!-- DROPDOWN MENU -->
                     <li><a href="#">{% trans 'Contacts' %}</a>
-                        <ul>'
+                        <ul>
                             <li><a href="{% url 'customer:booking' %}">{% trans 'Book A Table' %}</a></li>
                             <li><a href="{% url 'pages:location' %}">{% trans 'Our Locations' %}</a></li>
                             <li><a href="{% url 'pages:contact' %}">{% trans 'Contact Us' %}</a></li>
+                        </ul>
+                    </li>
+
+                    {% get_current_language as current_lang %}
+                    <li><a href="">{{ current_lang }}</a>
+                        <ul>
+                            {% get_available_languages as languages %}
+                            {% for lan in languages %}
+                                {% if lan.0 != current_lan %}
+                                    <li>
+                                        <a href="/{{ lan.0 }}/{{ request.path|slice:'4:' }}"
+                                           style="text-decoration: none; color: black;">{{ lan.1|upper }}</a>
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
                         </ul>
                     </li>
 
@@ -96,6 +112,7 @@
                             <span class="ico-holder"><span class="flaticon-shopping-bag"></span> <em class="roundpoint">2</em></span>
                         </a>
                     </li>
+
 
                 </ul>
             </nav>    <!-- END MAIN MENU -->
