@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div id="page" class="page">
+
+
+        <!-- PAGE HERO
+        ============================================= -->
+        <div id="gallery-page" class="page-hero-section division">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 offset-lg-1">
+                        <div class="hero-txt text-center white-color">
+
+                            <!-- Breadcrumb -->
+                            <div id="breadcrumb">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="breadcrumb-nav">
+                                            <nav aria-label="breadcrumb">
+                                                <ol class="breadcrumb">
+                                                    <li class="breadcrumb-item"><a href="{% url 'pages:home' %}">Home</a>
+                                                    </li>
+                                                    <li class="breadcrumb-item active" aria-current="page">Gallery</li>
+                                                </ol>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Title -->
+                            <h2 class="h2-xl">Images Gallery</h2>
+
+                        </div>
+                    </div>
+                </div>      <!-- End row -->
+            </div>       <!-- End container -->
+        </div>    <!-- END PAGE HERO -->
+
+
+        <!-- GALLERY-2
+        ============================================= -->
+        <section id="gallery-2" class="gallery-section division">
+            <div class="container">
+                <div class="row">
+                    {% for img in gallery %}
+                        <!-- IMAGE #1 -->
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="gallery-img">
+                                <a href="{{ img.image.url }}" class="image-link">
+                                    <div class="hover-overlay">
+                                        <img class="img-fluid" src="{{ img.image.url }}" alt="gallery-image"/>
+                                        <div class="item-overlay"></div>
+
+                                        <!-- Image Meta -->
+                                        <div class="img-meta white-color">
+                                            <h5 class="h5-xs pt-10 ">{{ img.title }}</h5>
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                </div>      <!-- End row -->
+            </div>       <!-- End container -->
+        </section>    <!-- END GALLERY-2 -->
+    </div>
+{% endblock %}

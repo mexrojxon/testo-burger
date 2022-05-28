@@ -1,6 +1,6 @@
 {% load static %}
 {% load i18n %}
-
+{% load my_tags %}
 
 <!-- PRELOADER SPINNER
 ============================================= -->
@@ -52,7 +52,7 @@
                         <ul>
                             <li><a href="{% url 'pages:about' %}">{% trans 'About Testo' %}</a></li>
                             <li><a href="{% url 'pages:team' %}">{% trans 'Meet The Team' %}</a></li>
-                            <li><a href="gallery.html">{% trans 'Images Gallery' %}</a></li>
+                            <li><a href="{% url 'pages:gallery' %}">{% trans 'Images Gallery' %}</a></li>
                             <li><a href="{% url 'pages:faqs' %}">{% trans 'F.A.Q.s' %}</a></li>
                             <li><a href="{% url 'pages:terms' %}">{% trans 'Terms & Privacy' %}</a></li>
                         </ul>
@@ -68,15 +68,6 @@
                     </li>
                 </ul>
                 <ul>
-
-                    <!-- DROPDOWN MENU -->
-                    <li><a href="#">Shop</a>
-                        <ul>
-                            <li><a href="product-single.html">Single Product</a></li>
-                            <li><a href="cart.html">Shopping Cart</a></li>
-                        </ul>
-                    </li>
-
                     <!-- DROPDOWN MENU -->
                     <li><a href="{% url 'blog:blog_list' %}">{% trans 'Blog' %}</a>
 
@@ -108,8 +99,10 @@
 
                     <!-- BASKET ICON -->
                     <li class="basket-ico ico-30">
-                        <a href="cart.html">
-                            <span class="ico-holder"><span class="flaticon-shopping-bag"></span> <em class="roundpoint">2</em></span>
+                        {% get_cart_info request as cart_info %}
+                        <a href="{% url 'product:shopping_cart' %}">
+                            <span class="ico-holder"><span class="flaticon-shopping-bag"></span> <em
+                                    class="roundpoint">{{ cart_info.0 }}</em></span>
                         </a>
                     </li>
 

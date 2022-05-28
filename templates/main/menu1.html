@@ -94,7 +94,9 @@
                                     </div>
 
                                     <!-- Title -->
-                                    <h5 class="h5-sm">{{ food.name }}</h5>
+                                    <a href="{% url 'product:single_product' food.id %}"><h5
+                                            class="h5-sm">{{ food.name }}</h5>
+                                    </a>
 
                                     <!-- Description -->
                                     {% for ingredient in food.ingredient.all %}
@@ -113,14 +115,12 @@
 
                                     <!-- Add To Cart -->
                                     <div class="add-to-cart bg-yellow ico-10">
-                                        {% if request|is_cart:object %}
-                                            <a href="#"><span
-                                                    class="flaticon-shopping-bag"></span>{% trans ' Remove from Cart' %}
-                                            </a>
+                                        {% if request|is_cart:food %}
+                                            <a href="{% url 'product:add_cart' pk=food.pk %}?next={{ request.path }}"
+                                               class="add-cart">- Remove From Cart</a>
                                         {% else %}
-                                            <a href="#"><span
-                                                    class="flaticon-shopping-bag"></span>{% trans ' Add to Cart' %}
-                                            </a>
+                                            <a href="{% url 'product:add_cart' pk=food.pk %}?next={{ request.path }}"
+                                               class="add-cart">+ Add To Cart</a>
                                         {% endif %}
                                     </div>
 

@@ -22,7 +22,7 @@ class BlogListView(ListView):
 class TagIndexView(ListView):
     model = BlogPostModel
     template_name = 'main/blog.html'
-    context_object_name = 'posts'
+
 
     def get_queryset(self):
         return BlogPostModel.objects.filter(tags__slug=self.kwargs.get('tag_slug'))

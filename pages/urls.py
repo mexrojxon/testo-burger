@@ -12,5 +12,6 @@ urlpatterns = [
     path('faqs/', FAQsPageView.as_view(), name='faqs'),
     path('terms/', TermsPageView.as_view(), name='terms'),
     path('about/', AboutPageView.as_view(), name='about'),
+    path('gallery/',GalleryView.as_view(), name='gallery')
 
 ]

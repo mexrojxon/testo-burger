@@ -3,7 +3,7 @@ from django.views.generic import *
 
 from product.models import ProductModel
 from .form import ContactModelForm
-from .models import HomeBannerModel, LocationModel, TeamModel, FAQsModel
+from .models import HomeBannerModel, LocationModel, TeamModel, FAQsModel, GallaryModel
 
 
 class HomePageView(TemplateView):
@@ -13,7 +13,15 @@ class HomePageView(TemplateView):
         context = super(HomePageView, self, **kwargs).get_context_data()
         context['banners'] = HomeBannerModel.objects.filter(is_active=True).order_by('-id')[:3]
         context['foods'] = ProductModel.objects.all().order_by('-pk')[:8]
+        context['food_filter'] = ProductModel.objects.all()
+        context['home_gallery'] = GallaryModel.objects.all()
         return context
+
+    def get_queryset(self):
+        qs = ProductModel.objects.all()
+        cat = self.request.GET.get('cat')
+        if cat:
+            qs = qs.filter(category_id=cat)
 
 
 class ContactPageView(CreateView):
@@ -50,3 +58,8 @@ class TermsPageView(TemplateView):
 
 class AboutPageView(TemplateView):
     template_name = 'main/about.html'
+
+class GalleryView(ListView):
+    model = GallaryModel
+    context_object_name = 'gallery'
+    template_name = 'main/gallery.html'

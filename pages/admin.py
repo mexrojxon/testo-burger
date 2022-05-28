@@ -30,3 +30,5 @@ class TeamModelAdmin(admin.ModelAdmin):
 class FAQsModelAdmin(admin.ModelAdmin):
     list_display = ['id', 'question']
     list_display_links =['question']
+
+admin.site.register(GallaryModel)

@@ -1,0 +1,396 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% load my_tags %}
+
+
+{% block content %}
+    <!-- PAGE CONTENT
+    ============================================= -->
+    <div id="page" class="page">
+
+
+        <!-- PAGE HERO
+        ============================================= -->
+        <div id="product-page" class="page-hero-section division">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 offset-lg-1">
+                        <div class="hero-txt text-center white-color">
+
+                            <!-- Breadcrumb -->
+                            <div id="breadcrumb">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="breadcrumb-nav">
+                                            <nav aria-label="breadcrumb">
+                                                <ol class="breadcrumb">
+                                                    <li class="breadcrumb-item"><a
+                                                            href="{% url 'pages:home' %}">Home</a></li>
+                                                    <li class="breadcrumb-item"><a
+                                                            href="{% url 'product:menu' %}">Menu</a></li>
+                                                    <li class="breadcrumb-item active"
+                                                        aria-current="page">{{ single_product.name }}
+                                                    </li>
+                                                </ol>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Title -->
+                            <h2 class="h2-xl">{{ single_product.name }}</h2>
+
+                        </div>
+                    </div>
+                </div>      <!-- End row -->
+            </div>       <!-- End container -->
+        </div>    <!-- END PAGE HERO -->
+
+
+        <!-- SINGLE PRODUCT
+        ============================================= -->
+        <section id="product-1" class="pt-100 single-product division">
+            <div class="container">
+                <div class="row">
+                    <!-- PRODUCT IMAGE -->
+                    <div class="col-lg-7">
+                        <div class="product-preview">
+
+
+                            <!-- TABS CONTENT -->
+                            <div class="tabs-content">
+
+                                <!-- TAB-1 CONTENT -->
+                                <div id="tab-1-img" class="tab-content text-center displayed">
+                                    <img class="img-fluid" src="{{ single_product.image.url }}" alt="menu-image"/>
+                                </div>
+
+                                {#                                <!-- TAB-2 CONTENT -->#}
+                                {#                                <div id="tab-2-img" class="tab-content text-center">#}
+                                {#                                    <img class="img-fluid" src="images/menu/burger-04.png" alt="menu-image"/>#}
+                                {#                                </div>#}
+                                {##}
+                                {#                                <!-- TAB-3 CONTENT -->#}
+                                {#                                <div id="tab-3-img" class="tab-content text-center">#}
+                                {#                                    <img class="img-fluid" src="images/menu/burger-07.png" alt="menu-image"/>#}
+                                {#                                </div>#}
+
+                            </div>    <!-- END TABS CONTENT -->
+
+
+                            <!-- TABS NAVIGATION -->
+                            {#                            <div class="tabs-nav">#}
+                            {#                                <div class="row">#}
+                            {#                                    <div class="col-lg-12 text-center">#}
+                            {#                                        <ul class="tabs-2 clearfix">#}
+                            {##}
+                            {#                                            <!-- TAB-1 LINK -->#}
+                            {#                                            <li class="tab-link displayed" data-tab="tab-1-img">#}
+                            {#                                                <img src="{{ single_product.image.url }}" alt="menu-image"/>#}
+                            {#                                            </li>#}
+                            {##}
+                            {#                                            <!-- TAB-2 LINK -->#}
+                            {#                                            <li class="tab-link" data-tab="tab-2-img">#}
+                            {#                                                <img src="images/menu/burger-04.png" alt="menu-image"/>#}
+                            {#                                            </li>#}
+                            {##}
+                            {#                                            <!-- TAB-2 LINK -->#}
+                            {#                                            <li class="tab-link" data-tab="tab-3-img">#}
+                            {#                                                <img src="images/menu/burger-07.png" alt="menu-image"/>#}
+                            {#                                            </li>#}
+                            {##}
+                            {#                                        </ul>#}
+                            {#                                    </div>#}
+                            {#                                </div>#}
+                            {#                            </div> <!-- END TABS NAVIGATION -->#}
+
+
+                        </div>
+                    </div>    <!-- END PRODUCT IMAGE -->
+
+
+                    <!-- PRODUCT DISCRIPTION -->
+                    <div class="col-lg-5">
+                        <div class="product-description">
+
+                            <!-- TITLE -->
+                            <div class="project-title">
+
+                                <!-- Title -->
+                                <h2 class="h2-lg"> {{ single_product.name }}</h2>
+
+                                <!-- Rating -->
+                                {#                                <div class="stars-rating">#}
+                                {#                                    <span>4.38</span>#}
+                                {#                                    <i class="fas fa-star"></i>#}
+                                {#                                    <i class="fas fa-star"></i>#}
+                                {#                                    <i class="fas fa-star"></i>#}
+                                {#                                    <i class="fas fa-star"></i>#}
+                                {#                                    <i class="fas fa-star-half-alt"></i>#}
+                                {#                                    <span>(3 Customer Reviews)</span>#}
+                                {#                                </div>#}
+
+                                <!-- Price -->
+                                <div class="project-price">
+                                    <h4 class="h4-xl yellow-color">
+                                        {% if discount %}
+                                            <span class="old-price">${{ single_product.is_discount }}</span>
+                                        {% endif %}
+                                        ${{ single_product.price }}</h4>
+                                </div>
+
+                            </div>
+
+                            <!-- TEXT -->
+                            <div class="product-txt">
+
+                                <!-- Text -->
+                                <p class="p-md grey-color">Integer congue magna at pretium purus pretium ligula
+                                    rutrum
+                                    risus ultrice luctus
+                                    ligula congue a vitae auctor sapien gravida enim ipsum congue morbi pretium
+                                </p>
+
+                                <!-- Product Data -->
+                                <div class="product-info">
+                                    <p>Portion Size: <span>{{ single_product.mass }}g</span></p>
+                                    <p>Ingrident: <span>{% for allergies in single_product.ingredient.all %}
+                                        {{ allergies|capfirst }},
+                                    {% endfor %}</span></p>
+                                    <p>Tags: <span>{% for tag in single_product.tag.all %}
+                                        {{ tag|capfirst }},
+                                    {% endfor %}</span></p>
+                                </div>
+
+                                <input class="qty" type="number" min="1" max="20" value="1">
+
+                                <!-- Add To Cart -->
+                                <div class="add-to-cart-btn bg-yellow ico-20 text-center">
+                                    {% if request|is_cart:single_product %}
+                                        <a href="{% url 'product:add_cart' pk=single_product.pk %}?next={{ request.path }}"
+                                           class="add-cart">- Remove From Cart</a>
+                                    {% else %}
+                                        <a href="{% url 'product:add_cart' pk=single_product.pk %}?next={{ request.path }}"
+                                           class="add-cart">+ Add To Cart</a>
+                                    {% endif %}
+                                </div>
+
+                                <!-- List -->
+                                <ul class="txt-list">
+                                    <li class="list-item"><p class="p-sm">We accept credit cards or cash to a
+                                        courier</p></li>
+                                    <li class="list-item"><p class="p-sm">Shipping cost is $2 (Free from $35)</p>
+                                    </li>
+                                    <li class="list-item"><p class="p-sm">Order before noon for same day
+                                        dispatch</p>
+                                    </li>
+                                </ul>
+
+                            </div>    <!-- END TEXT-->
+
+                        </div>
+                    </div>    <!-- END PRODUCT DISCRIPTION -->
+
+
+                </div>      <!-- End row -->
+            </div>       <!-- End container -->
+        </section>    <!-- END SINGLE PRODUCT -->
+
+
+        <!-- SINGLE PRODUCT DATA
+        ============================================= -->
+        <section id="product-1-data" class="wide-80 single-product-data division">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="">
+
+
+                            <!-- TABS NAVIGATION -->
+                            <div class="tabs-nav">
+                                <div class="row">
+                                    <div class="col-lg-12 text-center">
+                                        <ul class="tabs-1 clearfix">
+
+                                            <!-- TAB-1 LINK -->
+                                            <li class="tab-link current" data-tab="tab-1">
+                                                <h5 class="h5-sm">Description</h5>
+                                            </li>
+                                            {##}
+                                            {#                                            <!-- TAB-2 LINK -->#}
+                                            {#                                            <li class="tab-link" data-tab="tab-2">#}
+                                            {#                                                <h5 class="h5-sm">Reviews (3)</h5>#}
+                                            {#                                            </li>#}
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div> <!-- END TABS NAVIGATION -->
+
+
+                            <!-- TABS CONTENT -->
+                            <div class="tabs-content">
+
+
+                                <!-- TAB-1 CONTENT -->
+                                <div id="tab-1" class="tab-content current">
+
+                                    <!-- Text -->
+                                    <p>Donec sodales, nibh vel tristique aliquet, nisi libero suscipit diam, sed
+                                        tempus
+                                        ante nulla ut purus.
+                                        Donec dolor magna aliquet suscipit in magna dignissim, porttitor hendrerit.
+                                        Nunc
+                                        gravida ultrices a felis eget faucibus. Praesent lorem purus, quis mollis
+                                        nisi
+                                        laoreet vitae consequat tortor
+                                    </p>
+
+                                    <!-- List -->
+                                    <ul class="txt-list">
+
+                                        <li class="list-item">
+                                            <p><span class="txt-500">Quaerat sodales sapien undo euismod purus blandit velna</span>
+                                                vitae auctor
+                                                a congue magna tempor sapien eget gravida laoreet turpis urna augue,
+                                                viverra a augue eget, dictum tempor diam pulvinar consectetur purus
+                                                efficitur ipsum primis in cubilia laoreet augue donec
+                                            </p>
+                                        </li>
+
+                                        <li class="list-item">
+                                            <p><span class="txt-500">Nemo ipsam egestas volute turpis dolores</span>
+                                                ut
+                                                aliquam quaerat sodales
+                                                sapien congue augue egestas volutpat egestas magna suscipit egestas
+                                                magna ipsum vitae purus
+                                                efficitur ipsum primis in cubilia undo pretium a purus pretium
+                                                ligula
+                                            </p>
+                                        </li>
+
+                                    </ul>
+
+                                    <!-- Text -->
+                                    <p>Aliqum mullam blandit tempor sapien gravida donec ipsum, at porta justo.
+                                        Velna
+                                        vitae auctor congue magna
+                                        nihil impedit ligula risus. Mauris donec ociis et magnis sapien sagittis
+                                        sapien
+                                        sem congue tempor gravida donec enim ipsum porta justo integer odio velna a
+                                        purus efficitur ipsum primis in cubilia laoreet augue egestas luctus donec
+                                        purus
+                                        and blandit sodales mpedit ligula risus. Mauris donec ociis et magnis sapien
+                                    </p>
+
+                                </div>    <!-- END TAB-1 CONTENT -->
+                            </div>    <!-- END TABS CONTENT -->
+
+
+                        </div>
+                    </div>
+                </div>      <!-- End row -->
+            </div>       <!-- End container -->
+        </section>    <!-- END SINGLE PRODUCT DATA -->
+
+        {% if related_items %}
+            <!-- MENU-6
+            ============================================= -->
+            <section id="menu-6" class="bg-lightgrey wide-70 menu-section division">
+                <div class="container">
+
+
+                    <!-- SECTION TITLE -->
+                    <div class="row">
+                        <div class="col-lg-10 offset-lg-1">
+                            <div class="section-title mb-60 text-center">
+
+                                <!-- Title 	-->
+                                <h2 class="h2-xl">Related Products</h2>
+                                <!-- Text -->
+                                <p class="p-xl">Aliquam a augue suscipit, luctus neque purus ipsum neque undo dolor
+                                    primis libero tempus, blandit a cursus varius magna
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        {% for related in related_items %}
+                            <!-- MENU ITEM #1 -->
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="menu-6-item bg-white">
+
+                                    <!-- IMAGE -->
+                                    <div class="menu-6-img rel">
+                                        <div class="hover-overlay">
+
+                                            <!-- Image -->
+                                            <img class="img-fluid" src="images/menu/burger-11.jpg" alt="menu-image"/>
+
+                                            <!-- Item Code -->
+                                            <span class="item-code bg-tra-dark">Code: {{ related.id }}</span>
+
+                                            <!-- Zoom Icon -->
+                                            <div class="menu-img-zoom ico-25">
+                                                <a href="related.image.url " class="image-link">
+                                                    <span class="flaticon-zoom"></span>
+                                                </a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <!-- TEXT -->
+                                    <div class="menu-6-txt rel">
+
+                                        <!-- Rating -->
+                                        <div class="item-rating">
+                                            <div class="stars-rating stars-lg">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star-half-alt"></i>
+                                            </div>
+                                        </div>
+
+                                        <!-- Like Icon -->
+                                        <div class="like-ico ico-25">
+                                            <a href="#"><span class="flaticon-heart"></span></a>
+                                        </div>
+
+                                        <!-- Title -->
+                                        <h5 class="h5-sm">Crispy Chicken</h5>
+
+                                        <!-- Description -->
+                                        <p class="grey-color">Chicken breast, chilli sauce, tomatoes, pickles,
+                                            coleslaw</p>
+
+                                        <!-- Price -->
+                                        <div class="menu-6-price bg-coffee">
+                                            <h5 class="h5-xs yellow-color">$8.50</h5>
+                                        </div>
+
+                                        <!-- Add To Cart -->
+                                        <div class="add-to-cart bg-yellow ico-10">
+                                            <a href="#"><span class="flaticon-shopping-bag"></span> Add to Cart</a>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>    <!-- END MENU ITEM #1 -->
+                        {% endfor %}
+
+                    </div>      <!-- End row -->
+                </div>       <!-- End container -->
+            </section>    <!-- END MENU-6 -->
+        {% endif %}
+    </div>    <!-- END PAGE CONTENT -->
+
+{% endblock %}

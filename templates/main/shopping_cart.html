@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load i18n %}
+{% load my_tags %}
 
 {% block content %}
     <!-- PAGE CONTENT
-============================================= -->
+    ============================================= -->
     <div id="page" class="page">
 
 
@@ -23,7 +24,8 @@
                                         <div class="breadcrumb-nav">
                                             <nav aria-label="breadcrumb">
                                                 <ol class="breadcrumb">
-                                                    <li class="breadcrumb-item"><a href="demo-1.html">Home</a></li>
+                                                    <li class="breadcrumb-item"><a
+                                                            href="{% url 'pages:home' %}">Home</a></li>
                                                     <li class="breadcrumb-item active" aria-current="page">Shopping
                                                         Cart
                                                     </li>
@@ -66,58 +68,36 @@
                                 </thead>
 
                                 <tbody>
+                                {{ object_list.count }}
+                                {% for cart_item in object_list %}
+                                    <tr {% if cart_item.id < cart_item.count %} class="last-tr" {% endif %}>
+                                        <td data-label="Product" class="product-name">
 
-                                <!-- CART ITEM #1 -->
-                                <tr>
-                                    <td data-label="Product" class="product-name">
+                                            <!-- Preview -->
+                                            <div class="cart-product-img"><img src="{{ cart_item.image.url }}"
+                                                                               alt="cart-preview"></div>
 
-                                        <!-- Preview -->
-                                        <div class="cart-product-img"><img src="images/menu/burger-07.png"
-                                                                           alt="cart-preview"></div>
+                                            <!-- Description -->
+                                            <div class="cart-product-desc">
+                                                <h5 class="h5-sm">{{ cart_item.name }}</h5>
+                                                <p class="p-sm">{{ cart_item.description }}</p>
+                                            </div>
 
-                                        <!-- Description -->
-                                        <div class="cart-product-desc">
-                                            <h5 class="h5-sm">Smokey House Burger</h5>
-                                            <p class="p-sm">Magna donec and ipsum gravida</p>
-                                        </div>
+                                        </td>
 
-                                    </td>
+                                        <td data-label="Price" class="product-price"><h5 class="h5-md">
+                                            ${{ cart_item.price }}</h5></td>
+                                        <td data-label="Quantity" class="product-qty">
+                                            <input class="qty" type="number" min="1" max="20" value="1" method="POST">
+                                        </td>
+                                        <td data-label="Total" class="product-price-total"><h5 class="h5-md">$8.95</h5>
+                                        </td>
+                                        <td data-label="Delete" class="td-trash"><a
+                                                href="{% url 'product:add_cart' cart_item.id %}?next={{ request.path }}"><i
+                                                class="far fa-trash-alt"></i></a></td>
 
-                                    <td data-label="Price" class="product-price"><h5 class="h5-md">$8.95</h5></td>
-                                    <td data-label="Quantity" class="product-qty">
-                                        <input class="qty" type="number" min="1" max="20" value="1">
-                                    </td>
-                                    <td data-label="Total" class="product-price-total"><h5 class="h5-md">$8.95</h5></td>
-                                    <td data-label="Delete" class="td-trash"><i class="far fa-trash-alt"></i></td>
-
-                                </tr>
-
-                                <!-- CART ITEM #2 -->
-                                <tr class="last-tr">
-
-                                    <td data-label="Product" class="product-name">
-
-                                        <!-- Preview -->
-                                        <div class="cart-product-img"><img src="images/menu/pizza-04.png"
-                                                                           alt="cart-preview"></div>
-
-                                        <!-- Description -->
-                                        <div class="cart-product-desc">
-                                            <h5 class="h5-sm">BBQ Chicken Pizza</h5>
-                                            <p class="p-sm">Magna donec and ipsum gravida</p>
-                                        </div>
-
-                                    </td>
-
-                                    <td data-label="Price" class="product-price"><h5 class="h5-md">$27.00</h5></td>
-                                    <td data-label="Quantity" class="product-qty">
-                                        <input class="qty" type="number" min="1" max="20" value="1">
-                                    </td>
-                                    <td data-label="Total" class="product-price-total"><h5 class="h5-md">$27.00</h5>
-                                    </td>
-                                    <td data-label="Delete" class="td-trash"><i class="far fa-trash-alt"></i></td>
-                                </tr>
-
+                                    </tr>
+                                {% endfor %}
                                 </tbody>
 
                             </table>
@@ -177,13 +157,15 @@
                                 <tr class="last-tr">
                                     <td>Total</td>
                                     <td></td>
-                                    <td class="text-right">$35.95</td>
+                                    {% get_cart_info request as cart_info %}
+                                    <td class="text-right">${{ cart_info.1 }}</td>
                                 </tr>
                                 </tbody>
                             </table>
 
                             <!-- Button -->
-                            <a href="#" class="btn btn-md btn-salmon tra-salmon-hover">Proceed To Checkout</a>
+                            <a href="#" data-toggle="modal" data-target="#staticBackdrop"
+                               class="btn btn-md btn-salmon tra-salmon-hover">Proceed To Checkout</a>
 
                         </div>
                     </div>    <!-- END CHECKOUT -->
@@ -222,12 +204,14 @@
 
                                 <!-- AppStore -->
                                 <a href="#" class="store">
-                                    <img class="appstore-original" src="images/appstore.png" alt="appstore-logo"/>
+                                    <img class="appstore-original" src="{% static 'images/appstore.png' %}"
+                                         alt="appstore-logo"/>
                                 </a>
 
                                 <!-- Google Play -->
                                 <a href="#" class="store">
-                                    <img class="googleplay-original" src="images/googleplay.png" alt="googleplay-logo"/>
+                                    <img class="googleplay-original" src="{% static 'images/googleplay.png' %}"
+                                         alt="googleplay-logo"/>
                                 </a>
 
                             </div>
@@ -239,7 +223,7 @@
                     <!-- BANNER IMAGE -->
                     <div class="col-md-5 col-lg-6">
                         <div class="banner-3-img">
-                            <img class="img-fluid" src="images/e-shop.png" alt="banner-image">
+                            <img class="img-fluid" src="{% static 'images/e-shop.png' %}" alt="banner-image">
                         </div>
                     </div>
 
@@ -248,4 +232,56 @@
             </div>        <!-- End container -->
         </section>    <!-- END BANNER-3 -->
     </div>    <!-- END PAGE CONTENT -->
+
+    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+         aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Confirm the order</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-md-2 col-lg-12">
+                        <form class="discount-form">
+                            <input type="text" class="form-control mb-2" placeholder="What is your name?"
+                                   id="discount-code">
+                            <div class="input-group">
+
+                                <input type="text" class="form-control" placeholder="Please enter phone number"
+                                       id="discount-code">
+                                <span class="input-group-btn">
+												<button type="submit"
+                                                        class="btn btn-salmon tra-salmon-hover">SEND SMS</button>
+											</span>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-md btn-salmon tra-salmon-hover" data-dismiss="modal">Close
+                    </button>
+                    <button type="button" class="btn btn-md btn-salmon tra-salmon-hover">CONFIRM</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block extra_js %}
+    <script>
+        function getParamSearch(name, value) {
+            var searchParams = new URLSearchParams(window.location.search);
+            if (searchParams.has(name) && searchParams.get(name) == value) {
+                searchParams.delete(name);
+            } else {
+                searchParams.set(name, value);
+            }
+            window.location.search = searchParams.toString();
+        }
+    </script>
 {% endblock %}

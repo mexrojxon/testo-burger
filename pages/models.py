@@ -109,3 +109,15 @@ class BookingModel(models.Model):
     phone = models.CharField(max_length=20, verbose_name=_('phone'))
     message = models.TextField(verbose_name=_('message'))
     is_active = models.BooleanField(default=True, verbose_name=_('is_active'))
+
+
+class GallaryModel(models.Model):
+    title = models.CharField(max_length=30, verbose_name=_('title'))
+    image = models.ImageField(verbose_name=_('image'), upload_to='gallary/')
+
+    class Meta:
+        verbose_name = 'gallery'
+        verbose_name_plural = 'galleries'
+
+    def __str__(self):
+        return self.title

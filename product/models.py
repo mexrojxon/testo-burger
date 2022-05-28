@@ -2,6 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 
+
 class CategoryFoodModel(models.Model):
     name = models.CharField(max_length=55, verbose_name=_('name'))
     created_at = models.DateTimeField(auto_now_add=True, verbose_name=_('created at'))
@@ -12,6 +13,7 @@ class CategoryFoodModel(models.Model):
     class Meta:
         verbose_name = _('category')
         verbose_name_plural = _('categories')
+
 
 class TagModel(models.Model):
     name = models.CharField(max_length=54, verbose_name=_('name'))
@@ -24,6 +26,7 @@ class TagModel(models.Model):
         verbose_name = _('tag')
         verbose_name_plural = _('tags')
 
+
 class IngredientModel(models.Model):
     name = models.CharField(max_length=54, verbose_name=_('name'))
     created_at = models.DateTimeField(auto_now_add=True, verbose_name=_('created at'))
@@ -35,6 +38,7 @@ class IngredientModel(models.Model):
         verbose_name = _('ingredient')
         verbose_name_plural = _('ingredients')
 
+
 class ProductModel(models.Model):
     name = models.CharField(max_length=55, verbose_name=_('name'))
     image = models.ImageField(upload_to='foods/', verbose_name=_('image'))
@@ -44,16 +48,16 @@ class ProductModel(models.Model):
     description = models.TextField(verbose_name=_('description'))
     mass = models.CharField(max_length=10, verbose_name=_('mass'), null=True, blank=True)
 
+    ingredient = models.ManyToManyField(
+        IngredientModel,
+        related_name='products',
+        verbose_name=_('ingredient')
+    )
     category = models.ForeignKey(
         CategoryFoodModel,
         on_delete=models.PROTECT,
         related_name='products',
         verbose_name=_('category')
-    )
-    ingredient = models.ManyToManyField(
-        IngredientModel,
-        related_name='products',
-        verbose_name=_('ingredient')
     )
     tag = models.ManyToManyField(
         TagModel,
@@ -71,3 +75,7 @@ class ProductModel(models.Model):
 
     def get_related(self):
         return ProductModel.objects.filter(category__name=self.category).exclude(pk=self.pk)[:4]
+
+    @staticmethod
+    def get_cart_info(cart):
+        return ProductModel.objects.filter(id__in=cart)

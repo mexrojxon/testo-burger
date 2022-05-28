@@ -55,7 +55,7 @@
                     <!-- ABOUT IMAGE -->
                     <div class="col-md-5 col-lg-6">
                         <div class="about-3-img text-center mb-40">
-                            <img class="img-fluid" src="{% static 'images/about-03-img.png' %} " alt="about-image">
+                            <img class="img-fluid" src="{% static 'images/banner/burger1.webp' %} " alt="about-image">
                         </div>
                     </div>
 
@@ -190,8 +190,6 @@
         ============================================= -->
         <section id="menu-6" class="wide-70 menu-section division">
             <div class="container">
-
-
                 <!-- SECTION TITLE -->
                 <div class="row">
                     <div class="col-lg-10 offset-lg-1">
@@ -257,7 +255,7 @@
                                     </div>
 
                                     <!-- Title -->
-                                    <h5 class="h5-sm coffee-color">{{ items.name }}</h5>
+                                    <a href="{% url 'product:single_product' items.id %}" target="_blank"><h5 class="h5-sm coffee-color">{{ items.name }}</h5></a>
 
                                     <!-- Description -->
                                     {% for ingredient in items.ingredient.all %}
